@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import Sidebar from "../components/customer/Sidebar";
-import Topbar from "../components/customer/Topbar";
+import Sidebar from "../components/customer/sidebar";
+import Topbar from "../components/customer/topbar";
 
 export default function CustomerLayout() {
     return (
