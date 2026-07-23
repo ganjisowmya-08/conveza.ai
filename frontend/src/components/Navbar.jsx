@@ -26,9 +26,12 @@ const Navbar = () => {
                     <Link to="/signin" className="text-sm font-semibold text-gray-600 hover:text-green-600 transition-colors">
                         Sign In
                     </Link>
-                    <Link to="/signup" className="px-5 py-2.5 text-sm font-bold rounded-full bg-gray-900 text-white hover:bg-green-600 shadow-lg hover:shadow-green-500/30 transition-all transform hover:-translate-y-0.5">
-                        Get Started Free
+                    <Link to="/signup" className="text-sm font-semibold text-gray-600 hover:text-green-600 transition-colors">
+                        Sign Up
                     </Link>
+                    <button className="px-5 py-2.5 text-sm font-bold rounded-full bg-green-600 text-white hover:bg-green-700 shadow-lg hover:shadow-green-500/30 transition-all transform hover:-translate-y-0.5">
+                        Book Demo
+                    </button>
                 </div>
             </nav>
         </header>
