@@ -12,3 +12,5 @@ export default defineConfig({
         include: ['react', 'react-dom', 'react-router-dom', 'lucide-react'],
     },
 })
+// Trigger Vite dev server re-optimization and clean bundle scans (v5)
+

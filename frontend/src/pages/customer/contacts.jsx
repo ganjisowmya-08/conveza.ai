@@ -259,11 +259,10 @@ export default function Contacts() {
                             <button
                                 key={tab}
                                 onClick={() => setActiveFilter(tab)}
-                                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap ${
-                                    activeFilter === tab
+                                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap ${activeFilter === tab
                                         ? "bg-green-600 text-white shadow-md shadow-green-600/20"
                                         : "text-gray-600 hover:bg-gray-100"
-                                }`}
+                                    }`}
                             >
                                 {tab}
                             </button>
