@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
     return (
@@ -24,11 +25,14 @@ const Hero = () => {
                 </div>
 
                 <div className="flex gap-4">
-                    <button className="px-5 py-2 rounded-lg border border-green-600 text-green-600 hover:bg-green-50">
-                        Login
-                    </button>
+                    <Link
+                        to="/login"
+                        className="px-5 py-2 rounded-lg border border-green-600 text-green-600 hover:bg-green-50 flex items-center justify-center font-medium transition"
+                    >
+                        SignIn/SignUp
+                    </Link>
 
-                    <button className="px-5 py-2 rounded-lg bg-green-600 text-white hover:bg-green-700">
+                    <button className="px-5 py-2 rounded-lg bg-green-600 text-white hover:bg-green-700 font-medium transition">
                         Book Demo
                     </button>
                 </div>
@@ -58,15 +62,16 @@ const Hero = () => {
                     </p>
 
                     <div className="flex gap-5 mt-10">
-
-                        <button className="px-8 py-4 bg-green-600 rounded-xl text-white font-semibold hover:bg-green-700">
+                        <Link
+                            to="/signup"
+                            className="px-8 py-4 bg-green-600 rounded-xl text-white font-semibold hover:bg-green-700 flex items-center justify-center transition"
+                        >
                             Start Free Trial
-                        </button>
+                        </Link>
 
-                        <button className="px-8 py-4 border rounded-xl border-gray-300 hover:bg-gray-100">
+                        <button className="px-8 py-4 border rounded-xl border-gray-300 hover:bg-gray-100 font-semibold transition">
                             Watch Demo
                         </button>
-
                     </div>
 
                     <div className="flex gap-10 mt-12">
