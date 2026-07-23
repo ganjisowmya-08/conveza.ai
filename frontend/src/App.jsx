@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
-// Marketing and Auth components from main branch
+// Marketing, Auth and Customer routes from main branch
 import Navbar from "./components/Navbar";
-import Hero from "./pages/marketing/Home/Hero";
+import Home from "./pages/marketing/Home";
 import Features from "./pages/marketing/Home/Features";
 import Solutions from "./pages/marketing/Home/Solutions";
 import Pricing from "./pages/marketing/Home/Pricing";
 import Customers from "./pages/marketing/Home/Customers";
 import Resources from "./pages/marketing/Home/Resources";
+import Login from "./pages/auth/Login";
 import SignIn from "./pages/auth/SignIn";
-import SignUp from "./pages/auth/Signup";
+import Signup from "./pages/auth/Signup";
+import CustomerRoutes from "./routes/CustomerRoutes";
 
 // Superadmin layouts and components from admin branch
 import AdminLayout from './modules/superadmin/layouts/AdminLayout';
@@ -382,7 +384,7 @@ function App() {
                 <div key={rec.id} className={`alert-item border-${rec.type}`} style={{ background: 'rgba(255,255,255,0.01)', marginBottom: '0.75rem' }}>
                   <div>
                     <strong>{rec.title}</strong>
-                    <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginTop: '0.2.rem' }}>
+                    <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginTop: '0.2rem' }}>
                       {rec.message}
                     </p>
                   </div>
@@ -483,19 +485,30 @@ function App() {
   };
 
   const isSuperAdmin = window.location.pathname.startsWith('/superadmin') || window.location.hash.startsWith('#/superadmin');
+  const isCustomer = window.location.pathname.startsWith('/customer') || window.location.hash.startsWith('#/customer');
+  const showNavbar = !isSuperAdmin && !isCustomer;
 
   return (
     <Router>
-      {!isSuperAdmin && <Navbar />}
+      {showNavbar && <Navbar />}
       <Routes>
-        <Route path="/" element={<Hero />} />
+        {/* Marketing Landing Pages */}
+        <Route path="/" element={<Home />} />
         <Route path="/features" element={<Features />} />
         <Route path="/solutions" element={<Solutions />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/customers" element={<Customers />} />
         <Route path="/resources" element={<Resources />} />
+        
+        {/* Auth Routes */}
+        <Route path="/login" element={<Login />} />
         <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route path="/signup" element={<Signup />} />
+        
+        {/* Customer Workspace Subroutes */}
+        <Route path="/customer/*" element={<CustomerRoutes />} />
+        
+        {/* Superadmin Panel */}
         <Route 
           path="/superadmin" 
           element={
@@ -504,6 +517,9 @@ function App() {
             </AdminLayout>
           } 
         />
+        
+        {/* Wildcard redirect to Home */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
   );
