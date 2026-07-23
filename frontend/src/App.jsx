@@ -11,6 +11,7 @@ import Signup from "./pages/auth/Signup";
 import CustomerLayout from "./layouts/customerLayout";
 import Dashboard from "./pages/customer/dashboard";
 import Contacts from "./pages/customer/contacts";
+import AgentModule from "./pages/customer/agent";
 
 function MarketingLayout() {
     return (
@@ -44,6 +45,7 @@ function App() {
                 <Route index element={<Navigate to="dashboard" replace />} />
                 <Route path="dashboard" element={<Dashboard />} />
                 <Route path="contacts" element={<Contacts />} />
+                <Route path="agent" element={<AgentModule />} />
                 <Route path="*" element={<Dashboard />} />
             </Route>
 
