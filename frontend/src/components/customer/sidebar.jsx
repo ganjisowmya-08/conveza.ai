@@ -29,7 +29,7 @@ export default function Sidebar() {
         <div className="w-64 bg-white border-r flex flex-col">
             {/* Logo */}
             <div className="p-6 border-b">
-                <h1 className="text-2xl font-bold text-green-600">AisensyX</h1>
+                <h1 className="text-2xl font-bold text-green-600">conveza.ai</h1>
             </div>
 
             {/* Menu */}
