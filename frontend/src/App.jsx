@@ -1,4 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// Marketing and Auth components from main branch
+import Navbar from "./components/Navbar";
+import Hero from "./pages/marketing/Home/Hero";
+import Features from "./pages/marketing/Home/Features";
+import Solutions from "./pages/marketing/Home/Solutions";
+import Pricing from "./pages/marketing/Home/Pricing";
+import Customers from "./pages/marketing/Home/Customers";
+import Resources from "./pages/marketing/Home/Resources";
+import SignIn from "./pages/auth/SignIn";
+import SignUp from "./pages/auth/Signup";
+
+// Superadmin layouts and components from admin branch
 import AdminLayout from './modules/superadmin/layouts/AdminLayout';
 import Dashboard from './modules/superadmin/pages/Dashboard/Dashboard';
 import organizationService from './modules/superadmin/services/organizationService';
@@ -12,8 +26,6 @@ import dashboardService from './modules/superadmin/services/dashboardService';
 import './modules/superadmin/styles/globals.css';
 
 function App() {
-  const [currentPath, setCurrentPath] = useState(window.location.pathname);
-  const [currentHash, setCurrentHash] = useState(window.location.hash);
   const [currentTab, setCurrentTab] = useState('dashboard');
   
   // Data states for tabs
@@ -29,36 +41,6 @@ function App() {
   const [tickets, setTickets] = useState([]);
   const [auditLogs, setAuditLogs] = useState([]);
   const [settings, setSettings] = useState({ rootDomain: '', adminEmail: '' });
-
-  // Listen to path updates
-  useEffect(() => {
-    const handleLocationChange = () => {
-      setCurrentPath(window.location.pathname);
-      setCurrentHash(window.location.hash);
-    };
-
-    window.addEventListener('popstate', handleLocationChange);
-    window.addEventListener('hashchange', handleLocationChange);
-
-    const originalPushState = window.history.pushState;
-    window.history.pushState = function (...args) {
-      originalPushState.apply(this, args);
-      handleLocationChange();
-    };
-
-    const originalReplaceState = window.history.replaceState;
-    window.history.replaceState = function (...args) {
-      originalReplaceState.apply(this, args);
-      handleLocationChange();
-    };
-
-    return () => {
-      window.removeEventListener('popstate', handleLocationChange);
-      window.removeEventListener('hashchange', handleLocationChange);
-      window.history.pushState = originalPushState;
-      window.history.replaceState = originalReplaceState;
-    };
-  }, []);
 
   // Fetch data dynamically depending on active tab
   useEffect(() => {
@@ -120,12 +102,6 @@ function App() {
 
     loadTabContent();
   }, [currentTab]);
-
-  const isSuperAdminRoute = 
-    currentPath === '/superadmin' || 
-    currentPath.startsWith('/superadmin/') ||
-    currentHash === '#/superadmin' ||
-    currentHash.startsWith('#/superadmin/');
 
   const renderSuperAdminContent = () => {
     if (tabLoading) {
@@ -406,7 +382,7 @@ function App() {
                 <div key={rec.id} className={`alert-item border-${rec.type}`} style={{ background: 'rgba(255,255,255,0.01)', marginBottom: '0.75rem' }}>
                   <div>
                     <strong>{rec.title}</strong>
-                    <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginTop: '0.2rem' }}>
+                    <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginTop: '0.2.rem' }}>
                       {rec.message}
                     </p>
                   </div>
@@ -506,23 +482,30 @@ function App() {
     }
   };
 
-  if (isSuperAdminRoute) {
-    return (
-      <AdminLayout currentTab={currentTab} setCurrentTab={setCurrentTab}>
-        {renderSuperAdminContent()}
-      </AdminLayout>
-    );
-  }
+  const isSuperAdmin = window.location.pathname.startsWith('/superadmin') || window.location.hash.startsWith('#/superadmin');
 
-  // Fallback / standard path: Render the general marketing page
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', fontFamily: 'sans-serif' }}>
-      <h1 style={{ fontSize: "4rem", color: '#0f172a', marginBottom: '1rem' }}>Conveza.ai</h1>
-      <p style={{ fontSize: '1.25rem', color: '#475569' }}>Marketing Website is Working 🚀</p>
-      <p style={{ fontSize: '0.9rem', color: '#64748b', marginTop: '2rem' }}>
-        Super Admins can access the management panel at <a href="/superadmin" style={{ color: '#00a884', textDecoration: 'underline' }}>/superadmin</a> or <a href="#/superadmin" style={{ color: '#00a884', textDecoration: 'underline' }}>#/superadmin</a>
-      </p>
-    </div>
+    <Router>
+      {!isSuperAdmin && <Navbar />}
+      <Routes>
+        <Route path="/" element={<Hero />} />
+        <Route path="/features" element={<Features />} />
+        <Route path="/solutions" element={<Solutions />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/customers" element={<Customers />} />
+        <Route path="/resources" element={<Resources />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route 
+          path="/superadmin" 
+          element={
+            <AdminLayout currentTab={currentTab} setCurrentTab={setCurrentTab}>
+              {renderSuperAdminContent()}
+            </AdminLayout>
+          } 
+        />
+      </Routes>
+    </Router>
   );
 }
 
