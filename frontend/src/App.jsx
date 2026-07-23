@@ -1,9 +1,29 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Hero from "./pages/marketing/Home/Hero";
+import Features from "./pages/marketing/Home/Features";
+import Solutions from "./pages/marketing/Home/Solutions";
+import Pricing from "./pages/marketing/Home/Pricing";
+import Customers from "./pages/marketing/Home/Customers";
+import Resources from "./pages/marketing/Home/Resources";
+import SignIn from "./pages/auth/SignIn";
+import SignUp from "./pages/auth/SignUp";
+
 function App() {
     return (
-        <div>
-            <h1 style={{ fontSize: "4rem" }}>Conveza.ai</h1>
-            <p>Marketing Website is Working 🚀</p>
-        </div>
+        <Router>
+            <Navbar />
+            <Routes>
+                <Route path="/" element={<Hero />} />
+                <Route path="/features" element={<Features />} />
+                <Route path="/solutions" element={<Solutions />} />
+                <Route path="/pricing" element={<Pricing />} />
+                <Route path="/customers" element={<Customers />} />
+                <Route path="/resources" element={<Resources />} />
+                <Route path="/signin" element={<SignIn />} />
+                <Route path="/signup" element={<SignUp />} />
+            </Routes>
+        </Router>
     );
 }
 
