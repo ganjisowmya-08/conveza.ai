@@ -9,6 +9,7 @@ import Billing from "../pages/customer/billing";
 import Broadcast from "../pages/customer/broadcast";
 import Campaigns from "../pages/customer/campaigns";
 import Contacts from "../pages/customer/contacts";
+import AgentModule from "../pages/customer/agent";
 import Inbox from "../pages/customer/inbox";
 import Profile from "../pages/customer/profile";
 import Settings from "../pages/customer/settings";
@@ -28,6 +29,7 @@ export default function CustomerRoutes() {
                 <Route path="broadcast" element={<Broadcast />} />
                 <Route path="campaigns" element={<Campaigns />} />
                 <Route path="contacts" element={<Contacts />} />
+                <Route path="agent" element={<AgentModule />} />
                 <Route path="inbox" element={<Inbox />} />
                 <Route path="profile" element={<Profile />} />
                 <Route path="settings" element={<Settings />} />
