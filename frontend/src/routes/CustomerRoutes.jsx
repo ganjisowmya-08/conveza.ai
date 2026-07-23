@@ -1,5 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import Hero from "../pages/marketing/Home/Hero";
+import Home from "../pages/marketing/Home";
 import Features from "../pages/marketing/Home/Features";
 import Solutions from "../pages/marketing/Home/Solutions";
 import Pricing from "../pages/marketing/Home/Pricing";
@@ -18,7 +18,7 @@ export default function CustomerRoutes() {
         <Routes>
             {/* Marketing Pages with Navbar */}
             <Route element={<MarketingLayout />}>
-                <Route path="/" element={<Hero />} />
+                <Route path="/" element={<Home />} />
                 <Route path="/features" element={<Features />} />
                 <Route path="/solutions" element={<Solutions />} />
                 <Route path="/pricing" element={<Pricing />} />
