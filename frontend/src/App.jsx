@@ -10,6 +10,7 @@ import Login from "./pages/auth/Login";
 import Signup from "./pages/auth/Signup";
 import CustomerLayout from "./layouts/customerLayout";
 import Dashboard from "./pages/customer/dashboard";
+import Contacts from "./pages/customer/contacts";
 
 function MarketingLayout() {
     return (
@@ -42,6 +43,7 @@ function App() {
             <Route path="/customer" element={<CustomerLayout />}>
                 <Route index element={<Navigate to="dashboard" replace />} />
                 <Route path="dashboard" element={<Dashboard />} />
+                <Route path="contacts" element={<Contacts />} />
                 <Route path="*" element={<Dashboard />} />
             </Route>
 
