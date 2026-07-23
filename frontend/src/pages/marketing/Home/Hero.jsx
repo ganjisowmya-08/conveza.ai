@@ -29,7 +29,7 @@ const Hero = () => {
                         to="/login"
                         className="px-5 py-2 rounded-lg border border-green-600 text-green-600 hover:bg-green-50 flex items-center justify-center font-medium transition"
                     >
-                        Login
+                        SignIn/SignUp
                     </Link>
 
                     <button className="px-5 py-2 rounded-lg bg-green-600 text-white hover:bg-green-700 font-medium transition">
