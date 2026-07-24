@@ -1,4 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Commit+Mono&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --color-primary: #6847BA;
+  --color-accent: #FCD144;
+  --font-sans: "Instrument Sans", sans-serif;
+  --font-heading: "Sora", sans-serif;
+  --font-mono: "Commit Mono", monospace;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
 
 @layer utilities {
     @keyframes marquee {
