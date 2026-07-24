@@ -1,5 +1,19 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary: #6847BA;
+  --color-accent: #FCD144;
+  --font-sans: "Instrument Sans", sans-serif;
+  --font-heading: "Sora", sans-serif;
+  --font-mono: "Commit Mono", monospace;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
 @layer utilities {
     @keyframes marquee {
         0% {
