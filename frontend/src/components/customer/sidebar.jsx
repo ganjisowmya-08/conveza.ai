@@ -12,7 +12,6 @@ import {
     User,
     LogOut,
     Zap,
-    Sparkles,
 } from "lucide-react";
 
 const navigationGroups = [
