@@ -15,6 +15,7 @@ import {
 const menuItems = [
     { name: "Dashboard", path: "/customer/dashboard", icon: LayoutDashboard },
     { name: "Contacts", path: "/customer/contacts", icon: Users },
+    { name: "AI Agent", path: "/customer/agent", icon: Bot },
     { name: "Inbox", path: "/customer/inbox", icon: MessageCircle },
     { name: "Broadcast", path: "/customer/broadcast", icon: Megaphone },
     { name: "Templates", path: "/customer/templates", icon: FileText },
