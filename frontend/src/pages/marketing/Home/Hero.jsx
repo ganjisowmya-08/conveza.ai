@@ -19,7 +19,7 @@ const Hero = () => {
                         Next-Gen WhatsApp AI Revenue Engine
                     </div>
 
-                    <h1 className="text-6xl font-extrabold mt-4 leading-[1.1] text-gray-900 tracking-tight">
+                    <h1 className="text-6xl font-heading font-extrabold mt-4 leading-[1.1] text-gray-900 tracking-tight">
                         Turn WhatsApp into your <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
                             Smartest Sales Agent
