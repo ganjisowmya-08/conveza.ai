@@ -176,12 +176,12 @@ export default function Contacts() {
     };
 
     return (
-        <div className="space-y-6 max-w-7xl mx-auto pb-12">
+        <div className="flex flex-col gap-6 max-w-7xl mx-auto pb-12">
             {/* Page Header */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <div>
-                    <h1 className="text-3xl font-extrabold text-gray-900 tracking-tight">Contacts & Subscribers</h1>
-                    <p className="text-sm text-gray-500 mt-1">
+                <div className="space-y-1">
+                    <h1 className="text-3xl font-extrabold text-gray-900 tracking-tight leading-tight">Contacts & Subscribers</h1>
+                    <p className="text-sm text-gray-500 leading-relaxed">
                         Manage your WhatsApp contacts, lead segments, and subscriber preferences
                     </p>
                 </div>
@@ -202,48 +202,48 @@ export default function Contacts() {
             </div>
 
             {/* Metric Overview Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
                 <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-green-100 text-green-600 flex items-center justify-center font-bold">
+                    <div className="w-12 h-12 rounded-xl bg-green-100 text-green-600 flex items-center justify-center font-bold shrink-0">
                         <Users size={22} />
                     </div>
-                    <div>
-                        <p className="text-xs font-medium text-gray-500">Total Audience</p>
-                        <h3 className="text-2xl font-extrabold text-gray-900">{contactsList.length} Contacts</h3>
+                    <div className="space-y-0.5">
+                        <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider leading-none">Total Audience</p>
+                        <h3 className="text-2xl font-extrabold text-gray-900 tracking-tight">{contactsList.length} Contacts</h3>
                     </div>
                 </div>
 
                 <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center font-bold">
+                    <div className="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center font-bold shrink-0">
                         <UserCheck size={22} />
                     </div>
-                    <div>
-                        <p className="text-xs font-medium text-gray-500">Active Leads</p>
-                        <h3 className="text-2xl font-extrabold text-gray-900">
+                    <div className="space-y-0.5">
+                        <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider leading-none">Active Leads</p>
+                        <h3 className="text-2xl font-extrabold text-gray-900 tracking-tight">
                             {contactsList.filter((c) => c.tag.includes("Lead")).length} Leads
                         </h3>
                     </div>
                 </div>
 
                 <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                    <div className="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center font-bold shrink-0">
                         <Tag size={22} />
                     </div>
-                    <div>
-                        <p className="text-xs font-medium text-gray-500">Subscribed VIPs</p>
-                        <h3 className="text-2xl font-extrabold text-gray-900">
+                    <div className="space-y-0.5">
+                        <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider leading-none">Subscribed VIPs</p>
+                        <h3 className="text-2xl font-extrabold text-gray-900 tracking-tight">
                             {contactsList.filter((c) => c.tag.includes("VIP") || c.tag === "Subscribed").length} Users
                         </h3>
                     </div>
                 </div>
 
                 <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-gray-100 text-gray-600 flex items-center justify-center font-bold">
+                    <div className="w-12 h-12 rounded-xl bg-gray-100 text-gray-600 flex items-center justify-center font-bold shrink-0">
                         <UserX size={22} />
                     </div>
-                    <div>
-                        <p className="text-xs font-medium text-gray-500">Opted-Out</p>
-                        <h3 className="text-2xl font-extrabold text-gray-900">
+                    <div className="space-y-0.5">
+                        <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider leading-none">Opted-Out</p>
+                        <h3 className="text-2xl font-extrabold text-gray-900 tracking-tight">
                             {contactsList.filter((c) => c.status === "Opted-Out").length} Contacts
                         </h3>
                     </div>
@@ -251,10 +251,10 @@ export default function Contacts() {
             </div>
 
             {/* Filter Tabs & Search Bar */}
-            <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm space-y-4">
+            <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm flex flex-col gap-4">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                     {/* Category Tabs */}
-                    <div className="flex items-center gap-1 overflow-x-auto pb-1 md:pb-0">
+                    <div className="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0">
                         {["All", "Leads", "Customers", "Subscribed", "Opted-Out"].map((tab) => (
                             <button
                                 key={tab}
@@ -306,7 +306,7 @@ export default function Contacts() {
                 <div className="overflow-x-auto">
                     <table className="w-full text-left text-sm">
                         <thead>
-                            <tr className="bg-gray-50/70 border-b border-gray-100 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                            <tr className="bg-gray-50/70 border-b border-gray-100 text-[11px] font-bold text-gray-400 uppercase tracking-wider">
                                 <th className="py-4 pl-6 w-10">
                                     <input
                                         type="checkbox"
@@ -351,9 +351,9 @@ export default function Contacts() {
                                                 >
                                                     {contact.name.charAt(0)}
                                                 </div>
-                                                <div>
-                                                    <p className="font-bold text-gray-900">{contact.name}</p>
-                                                    <p className="text-xs text-gray-400 flex items-center gap-1">
+                                                <div className="space-y-0.5">
+                                                    <p className="font-bold text-gray-900 leading-tight">{contact.name}</p>
+                                                    <p className="text-xs text-gray-400 flex items-center gap-1 leading-normal">
                                                         <Mail size={12} /> {contact.email}
                                                     </p>
                                                 </div>
