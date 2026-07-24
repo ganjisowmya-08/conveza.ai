@@ -17,6 +17,16 @@ import AgentModule from "./pages/customer/agent";
 // Superadmin layouts and components from admin branch
 import AdminLayout from "./modules/superadmin/layouts/AdminLayout";
 import SuperAdminDashboard from "./modules/superadmin/pages/Dashboard/Dashboard";
+import Organizations from "./modules/superadmin/pages/Organizations/Organizations";
+import Plans from "./modules/superadmin/pages/Billing/Plans";
+import WhatsAppAccounts from "./modules/superadmin/pages/Communication/WhatsAppAccounts";
+import Campaigns from "./modules/superadmin/pages/CRM/Campaigns";
+import Recommendations from "./modules/superadmin/pages/AI/Recommendations";
+import InstalledApps from "./modules/superadmin/pages/Integrations/InstalledApps";
+import Tickets from "./modules/superadmin/pages/Support/Tickets";
+import AuditLogs from "./modules/superadmin/pages/Security/AuditLogs";
+import General from "./modules/superadmin/pages/Settings/General";
+
 import organizationService from "./modules/superadmin/services/organizationService";
 import billingService from "./modules/superadmin/services/billingService";
 import analyticsService from "./modules/superadmin/services/analyticsService";
@@ -118,9 +128,27 @@ function SuperAdminPanel() {
 
         switch (currentTab) {
             case "dashboard":
-                return <SuperAdminDashboard />;
+                return <SuperAdminDashboard setCurrentTab={setCurrentTab} />;
+            case "organizations":
+                return <Organizations />;
+            case "billing":
+                return <Plans />;
+            case "whatsapp":
+                return <WhatsAppAccounts />;
+            case "crm":
+                return <Campaigns />;
+            case "ai":
+                return <Recommendations />;
+            case "integrations":
+                return <InstalledApps />;
+            case "support":
+                return <Tickets />;
+            case "security":
+                return <AuditLogs />;
+            case "settings":
+                return <General />;
             default:
-                return <SuperAdminDashboard />;
+                return <SuperAdminDashboard setCurrentTab={setCurrentTab} />;
         }
     };
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import organizationService from '../../../services/organizationService';
 
-const CompanyTable = () => {
+const CompanyTable = ({ setCurrentTab }) => {
   const [companies, setCompanies] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -21,7 +21,7 @@ const CompanyTable = () => {
           <h3>Active Organizations</h3>
           <p className="widget-subtitle">Tenant subscription levels and WhatsApp Gateway usage metrics</p>
         </div>
-        <button className="btn-primary">Add Organization</button>
+        <button className="btn-primary" onClick={() => setCurrentTab && setCurrentTab('organizations')}>Add Organization</button>
       </div>
 
       {loading ? (
@@ -49,10 +49,15 @@ const CompanyTable = () => {
               {companies.map(company => (
                 <tr key={company.id}>
                   <td>
-                    <div className="company-info-cell">
+                    <div 
+                      className="company-info-cell" 
+                      style={{ cursor: 'pointer' }}
+                      title="Click to view tenant details"
+                      onClick={() => setCurrentTab && setCurrentTab('organizations')}
+                    >
                       <span className="company-logo-avatar">{company.name.charAt(0)}</span>
                       <div>
-                        <div className="company-name-text">{company.name}</div>
+                        <div className="company-name-text" style={{ fontWeight: '600' }}>{company.name}</div>
                         <div className="company-domain-text">{company.domain}</div>
                       </div>
                     </div>
@@ -90,13 +95,13 @@ const CompanyTable = () => {
                   </td>
                   <td>
                     <div className="table-actions">
-                      <button className="action-icon-btn" title="Edit Organization">
+                      <button className="action-icon-btn" title="Edit Organization" onClick={() => setCurrentTab && setCurrentTab('organizations')}>
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                           <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
                           <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
                         </svg>
                       </button>
-                      <button className="action-icon-btn" title="View Usage Insights">
+                      <button className="action-icon-btn" title="View Usage Insights" onClick={() => setCurrentTab && setCurrentTab('organizations')}>
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                           <line x1="18" y1="20" x2="18" y2="10" />
                           <line x1="12" y1="20" x2="12" y2="4" />

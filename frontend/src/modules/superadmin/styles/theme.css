@@ -1,40 +1,53 @@
 :root {
-  --bg-primary: #f8fafc;
+  /* shadcn-inspired light/contrast background tokens */
+  --bg-primary: #f9fafb;
   --bg-secondary: #ffffff;
-  --bg-tertiary: #f1f5f9;
+  --bg-tertiary: #f4f4f5; /* Zinc-100 shadcn style */
   --bg-card: #ffffff;
   
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #64748b;
+  /* high contrast shadcn text structure */
+  --text-primary: #09090b; /* Zinc-950 */
+  --text-secondary: #71717a; /* Zinc-500 */
+  --text-muted: #a1a1aa; /* Zinc-400 */
   
-  --accent-primary: #00a884;
-  --accent-primary-hover: #008f70;
+  /* Brand Colors (Royal Purple & Golden Yellow) */
+  --accent-primary: #6847BA; /* Royal Purple */
+  --accent-primary-hover: #563a9d;
   --accent-emerald: #10b981;
-  --accent-cyan: #3b82f6;
+  --accent-cyan: #06b6d4;
   --accent-indigo: #6366f1;
   --accent-violet: #8b5cf6;
   --accent-rose: #ef4444;
-  --accent-amber: #f59e0b;
+  --accent-amber: #FCD144; /* Golden Yellow Accent */
   
-  --accent-primary-glow: rgba(0, 168, 132, 0.06);
-  --accent-emerald-glow: rgba(16, 185, 129, 0.06);
-  --accent-cyan-glow: rgba(59, 130, 246, 0.06);
-  --accent-violet-glow: rgba(139, 92, 246, 0.06);
+  /* Glowing / hover borders (Dribbble/Pinterest highlights) */
+  --accent-primary-glow: rgba(104, 71, 186, 0.08);
+  --accent-emerald-glow: rgba(16, 185, 129, 0.08);
+  --accent-cyan-glow: rgba(6, 186, 212, 0.08);
+  --accent-violet-glow: rgba(139, 92, 246, 0.08);
+  --accent-amber-glow: rgba(252, 209, 68, 0.08);
   
-  --border-light: #e2e8f0;
-  --border-medium: #cbd5e1;
-  --border-accent: rgba(0, 168, 132, 0.25);
-  --border-accent-cyan: rgba(59, 130, 246, 0.25);
+  /* shadcn clean borders */
+  --border-light: #e4e4e7; /* Zinc-200 */
+  --border-medium: #d4d4d8; /* Zinc-300 */
+  --border-accent: rgba(104, 71, 186, 0.25);
+  --border-accent-cyan: rgba(6, 186, 212, 0.25);
+  --border-accent-amber: rgba(252, 209, 68, 0.25);
   
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.02);
-  --shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
-  --shadow-lg: 0 12px 24px -4px rgba(0, 0, 0, 0.04), 0 4px 12px -2px rgba(0, 0, 0, 0.02);
+  /* Dribbble soft layout shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 6px 16px -2px rgba(104, 71, 186, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+  --shadow-lg: 0 16px 36px rgba(104, 71, 186, 0.05), 0 4px 12px rgba(0, 0, 0, 0.02);
   
-  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
+  /* Typography Configuration */
+  --font-sans: 'Instrument Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: 'Sora', sans-serif;
+  --font-mono: 'Commit Mono', 'JetBrains Mono', monospace;
+  
+  /* Pinterest-inspired border radii */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px; /* soft rounded cards */
   --radius-full: 9999px;
   
   --transition-fast: 0.15s ease;
