@@ -5,13 +5,13 @@ const Integrations = () => {
         <section className="py-24 bg-gray-50 border-t border-gray-100">
             <div className="max-w-7xl mx-auto px-8">
                 <div className="text-center mb-16">
-                    <h2 className="text-green-600 font-bold tracking-wide uppercase text-sm mb-3">Seamless Connectivity</h2>
+                    <h2 className="text-primary font-bold tracking-wide uppercase text-sm mb-3">Seamless Connectivity</h2>
                     <h1 className="text-5xl font-extrabold text-gray-900 tracking-tight">Integrates With Your Stack</h1>
                 </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                     {[
-                        { name: "Shopify", icon: "🛍️", color: "text-green-500", bg: "bg-green-50" },
+                        { name: "Shopify", icon: "🛍️", color: "text-accent", bg: "bg-primary/5" },
                         { name: "Salesforce", icon: "☁️", color: "text-blue-500", bg: "bg-blue-50" },
                         { name: "HubSpot", icon: "⚙️", color: "text-orange-500", bg: "bg-orange-50" },
                         { name: "Meta Ads", icon: "🌐", color: "text-blue-600", bg: "bg-blue-50" },

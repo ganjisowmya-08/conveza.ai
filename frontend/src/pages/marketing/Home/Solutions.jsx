@@ -18,13 +18,13 @@ const Solutions = () => {
                 <div className="space-y-16">
                     {solutions.map((sol, idx) => (
                         <div key={idx} className={`flex flex-col md:flex-row items-center gap-12 ${idx % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
-                            <div className="flex-1 bg-green-50 rounded-3xl p-20 text-center text-8xl shadow-inner">
+                            <div className="flex-1 bg-primary/5 rounded-3xl p-20 text-center text-8xl shadow-inner">
                                 {sol.img}
                             </div>
                             <div className="flex-1 space-y-6">
                                 <h2 className="text-4xl font-bold text-gray-900">{sol.title}</h2>
                                 <p className="text-xl text-gray-600 leading-relaxed">{sol.desc}</p>
-                                <button className="text-green-600 font-bold text-lg hover:underline flex items-center gap-2">
+                                <button className="text-primary font-bold text-lg hover:underline flex items-center gap-2">
                                     Learn more about {sol.title} &rarr;
                                 </button>
                             </div>

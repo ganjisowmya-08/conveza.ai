@@ -5,7 +5,7 @@ const Customers = () => {
         <section className="py-24 bg-gray-50 overflow-hidden">
             <div className="max-w-7xl mx-auto px-8">
                 <div className="text-center mb-16">
-                    <h2 className="text-green-600 font-bold tracking-wide uppercase text-sm mb-3">Wall of Love</h2>
+                    <h2 className="text-primary font-bold tracking-wide uppercase text-sm mb-3">Wall of Love</h2>
                     <h1 className="text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Trusted by Industry Leaders</h1>
                     <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                         See why top brands are ditching legacy marketing platforms for Conveza.AI.
@@ -54,7 +54,7 @@ const Customers = () => {
                     ].map((t, i) => (
                         <div key={i} className="bg-white p-8 rounded-3xl border border-gray-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
                             <div>
-                                <div className="flex gap-1 text-green-500 mb-6">
+                                <div className="flex gap-1 text-accent mb-6">
                                     ★★★★★
                                 </div>
                                 <p className="text-gray-800 text-lg leading-relaxed font-medium mb-8">
@@ -62,7 +62,7 @@ const Customers = () => {
                                 </p>
                             </div>
                             <div className="flex items-center gap-4 pt-6 border-t border-gray-50">
-                                <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-green-500 to-emerald-400 text-white flex items-center justify-center font-bold text-xl shadow-inner">
+                                <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-accent to-accent text-white flex items-center justify-center font-bold text-xl shadow-inner">
                                     {t.initial}
                                 </div>
                                 <div>

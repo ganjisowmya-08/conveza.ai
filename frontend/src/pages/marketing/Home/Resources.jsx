@@ -21,11 +21,11 @@ const Resources = () => {
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {resources.map((res, idx) => (
                         <div key={idx} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition-shadow cursor-pointer group">
-                            <div className="h-48 bg-gray-200 group-hover:bg-green-100 transition-colors flex items-center justify-center text-4xl">
+                            <div className="h-48 bg-gray-200 group-hover:bg-primary/10 transition-colors flex items-center justify-center text-4xl">
                                 📚
                             </div>
                             <div className="p-6">
-                                <span className="text-sm font-bold text-green-600 uppercase tracking-wider">{res.category}</span>
+                                <span className="text-sm font-bold text-primary uppercase tracking-wider">{res.category}</span>
                                 <h3 className="text-xl font-bold text-gray-900 mt-2 mb-4">{res.title}</h3>
                                 <p className="text-gray-500 text-sm">{res.readTime}</p>
                             </div>

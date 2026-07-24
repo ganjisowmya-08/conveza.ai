@@ -29,7 +29,7 @@ export default function Sidebar() {
         <div className="w-64 bg-white border-r flex flex-col">
             {/* Logo */}
             <div className="p-6 border-b">
-                <h1 className="text-2xl font-bold text-green-600">conveza.ai</h1>
+                <h1 className="text-2xl font-bold text-primary">conveza.ai</h1>
             </div>
 
             {/* Menu */}
@@ -42,7 +42,7 @@ export default function Sidebar() {
                             to={item.path}
                             className={({ isActive }) =>
                                 `flex items-center gap-3 px-4 py-3 rounded-lg transition ${isActive
-                                    ? "bg-green-100 text-green-700 font-semibold"
+                                    ? "bg-primary/10 text-primary/90 font-semibold"
                                     : "text-gray-700 hover:bg-gray-100"
                                 }`
                             }

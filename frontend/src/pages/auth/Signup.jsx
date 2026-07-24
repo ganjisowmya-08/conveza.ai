@@ -16,15 +16,15 @@ export default function Signup() {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-50 via-white to-green-100 p-6">
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 via-white to-primary/10 p-6">
             <div className="w-full max-w-md bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
                 {/* Logo */}
                 <div className="flex items-center gap-3 mb-8 justify-center">
-                    <div className="w-10 h-10 rounded-xl bg-green-600 text-white flex items-center justify-center font-bold text-xl">
+                    <div className="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center font-bold text-xl">
                         C
                     </div>
                     <span className="text-2xl font-bold text-gray-800">
-                        conveza<span className="text-green-600">.ai</span>
+                        conveza<span className="text-primary">.ai</span>
                     </span>
                 </div>
 
@@ -45,7 +45,7 @@ export default function Signup() {
                                 required
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
-                                className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition"
+                                className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition"
                                 placeholder="John Doe"
                             />
                         </div>
@@ -62,7 +62,7 @@ export default function Signup() {
                                 required
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-                                className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition"
+                                className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition"
                                 placeholder="name@company.com"
                             />
                         </div>
@@ -79,7 +79,7 @@ export default function Signup() {
                                 required
                                 value={company}
                                 onChange={(e) => setCompany(e.target.value)}
-                                className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition"
+                                className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition"
                                 placeholder="Acme Inc."
                             />
                         </div>
@@ -96,7 +96,7 @@ export default function Signup() {
                                 required
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
-                                className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition"
+                                className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition"
                                 placeholder="••••••••"
                             />
                         </div>
@@ -104,7 +104,7 @@ export default function Signup() {
 
                     <button
                         type="submit"
-                        className="w-full bg-green-600 text-white py-3 rounded-xl font-semibold hover:bg-green-700 transition flex items-center justify-center gap-2 group mt-6"
+                        className="w-full bg-primary text-white py-3 rounded-xl font-semibold hover:bg-primary/90 transition flex items-center justify-center gap-2 group mt-6"
                     >
                         Sign Up
                         <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -113,7 +113,7 @@ export default function Signup() {
 
                 <div className="mt-6 text-center text-sm text-gray-600">
                     Already have an account?{" "}
-                    <Link to="/login" className="text-green-600 font-semibold hover:underline">
+                    <Link to="/login" className="text-primary font-semibold hover:underline">
                         Sign In
                     </Link>
                 </div>

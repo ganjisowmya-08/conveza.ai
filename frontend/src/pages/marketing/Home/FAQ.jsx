@@ -26,7 +26,7 @@ const FAQ = () => {
         <section className="py-24 bg-white">
             <div className="max-w-4xl mx-auto px-8">
                 <div className="text-center mb-16">
-                    <h2 className="text-green-600 font-bold tracking-wide uppercase text-sm mb-3">FAQ</h2>
+                    <h2 className="text-primary font-bold tracking-wide uppercase text-sm mb-3">FAQ</h2>
                     <h1 className="text-5xl font-extrabold text-gray-900 tracking-tight">Got Questions?</h1>
                 </div>
 
@@ -34,14 +34,14 @@ const FAQ = () => {
                     {faqs.map((faq, i) => (
                         <div 
                             key={i} 
-                            className={`border rounded-2xl overflow-hidden transition-colors ${openIndex === i ? 'border-green-500 bg-green-50/30' : 'border-gray-200 bg-white hover:border-gray-300'}`}
+                            className={`border rounded-2xl overflow-hidden transition-colors ${openIndex === i ? 'border-accent bg-primary/5/30' : 'border-gray-200 bg-white hover:border-gray-300'}`}
                         >
                             <button 
                                 className="w-full text-left px-6 py-5 flex justify-between items-center font-bold text-lg text-gray-900"
                                 onClick={() => setOpenIndex(openIndex === i ? -1 : i)}
                             >
                                 {faq.question}
-                                <span className={`transform transition-transform text-green-600 ${openIndex === i ? 'rotate-180' : ''}`}>
+                                <span className={`transform transition-transform text-primary ${openIndex === i ? 'rotate-180' : ''}`}>
                                     ▼
                                 </span>
                             </button>

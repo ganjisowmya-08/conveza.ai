@@ -8,11 +8,11 @@ const Footer = () => {
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-16">
                     <div className="col-span-2">
                         <Link to="/" className="flex items-center gap-3 mb-6">
-                            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-green-600 to-emerald-400 text-white flex items-center justify-center font-bold text-xl shadow-lg shadow-green-500/30">
+                            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary to-accent text-white flex items-center justify-center font-bold text-xl shadow-lg shadow-accent/30">
                                 C
                             </div>
                             <h1 className="text-2xl font-extrabold text-gray-900 tracking-tight">
-                                Conveza<span className="text-green-600">.AI</span>
+                                Conveza<span className="text-primary">.AI</span>
                             </h1>
                         </Link>
                         <p className="text-gray-500 mb-6 max-w-sm">
@@ -23,29 +23,29 @@ const Footer = () => {
                     <div>
                         <h4 className="font-bold text-gray-900 mb-4">Product</h4>
                         <ul className="space-y-3 text-sm text-gray-500">
-                            <li><Link to="/features" className="hover:text-green-600 transition-colors">Features</Link></li>
-                            <li><Link to="/integrations" className="hover:text-green-600 transition-colors">Integrations</Link></li>
-                            <li><Link to="/pricing" className="hover:text-green-600 transition-colors">Pricing</Link></li>
-                            <li><Link to="/changelog" className="hover:text-green-600 transition-colors">Changelog</Link></li>
+                            <li><Link to="/features" className="hover:text-primary transition-colors">Features</Link></li>
+                            <li><Link to="/integrations" className="hover:text-primary transition-colors">Integrations</Link></li>
+                            <li><Link to="/pricing" className="hover:text-primary transition-colors">Pricing</Link></li>
+                            <li><Link to="/changelog" className="hover:text-primary transition-colors">Changelog</Link></li>
                         </ul>
                     </div>
 
                     <div>
                         <h4 className="font-bold text-gray-900 mb-4">Company</h4>
                         <ul className="space-y-3 text-sm text-gray-500">
-                            <li><Link to="/about" className="hover:text-green-600 transition-colors">About Us</Link></li>
-                            <li><Link to="/careers" className="hover:text-green-600 transition-colors">Careers</Link></li>
-                            <li><Link to="/blog" className="hover:text-green-600 transition-colors">Blog</Link></li>
-                            <li><Link to="/contact" className="hover:text-green-600 transition-colors">Contact</Link></li>
+                            <li><Link to="/about" className="hover:text-primary transition-colors">About Us</Link></li>
+                            <li><Link to="/careers" className="hover:text-primary transition-colors">Careers</Link></li>
+                            <li><Link to="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
+                            <li><Link to="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
                         </ul>
                     </div>
 
                     <div>
                         <h4 className="font-bold text-gray-900 mb-4">Legal</h4>
                         <ul className="space-y-3 text-sm text-gray-500">
-                            <li><Link to="/privacy" className="hover:text-green-600 transition-colors">Privacy Policy</Link></li>
-                            <li><Link to="/terms" className="hover:text-green-600 transition-colors">Terms of Service</Link></li>
-                            <li><Link to="/security" className="hover:text-green-600 transition-colors">Security</Link></li>
+                            <li><Link to="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
+                            <li><Link to="/terms" className="hover:text-primary transition-colors">Terms of Service</Link></li>
+                            <li><Link to="/security" className="hover:text-primary transition-colors">Security</Link></li>
                         </ul>
                     </div>
                 </div>
