@@ -6,7 +6,7 @@ import CompanyTable from '../../components/tables/CompanyTable';
 import RecentActivity from '../../components/widgets/RecentActivity';
 import dashboardService from '../../services/dashboardService';
 
-const Dashboard = () => {
+const Dashboard = ({ setCurrentTab }) => {
   const [stats, setStats] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -77,6 +77,14 @@ const Dashboard = () => {
               trendType={stat.trendType}
               icon={getIconForStat(stat.id)}
               colorClass={stat.colorClass}
+              onClick={() => {
+                if (setCurrentTab) {
+                  if (stat.id === 'revenue') setCurrentTab('billing');
+                  else if (stat.id === 'tenants') setCurrentTab('organizations');
+                  else if (stat.id === 'gateways') setCurrentTab('whatsapp');
+                  else if (stat.id === 'latency') setCurrentTab('settings');
+                }
+              }}
             />
           ))
         )}
@@ -90,7 +98,7 @@ const Dashboard = () => {
 
       {/* Bottom Row - Table and Audit Log */}
       <div className="widgets-grid">
-        <CompanyTable />
+        <CompanyTable setCurrentTab={setCurrentTab} />
         <RecentActivity />
       </div>
     </div>

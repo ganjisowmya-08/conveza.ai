@@ -30,7 +30,7 @@ export const organizationService = {
         ],
         totalCustomers: 24200,
         totalBroadcasts: 142,
-        customerTags: { VIP: 1250, Leads: 8200, Active: 14200, Inactive: 550 },
+        customerTags: { VIP: 1250, Leads: 8200, Active: 14200, Inactive: 550, Repetitive: 4500 },
         broadcastStats: { sent: 1200000, readRate: '86.4%', successRate: '99.5%' }
       },
       {
@@ -51,7 +51,7 @@ export const organizationService = {
         ],
         totalCustomers: 8500,
         totalBroadcasts: 48,
-        customerTags: { VIP: 340, Leads: 2500, Active: 5200, Inactive: 460 },
+        customerTags: { VIP: 340, Leads: 2500, Active: 5200, Inactive: 460, Repetitive: 1800 },
         broadcastStats: { sent: 320000, readRate: '81.2%', successRate: '99.1%' }
       },
       {
@@ -71,7 +71,7 @@ export const organizationService = {
         ],
         totalCustomers: 1200,
         totalBroadcasts: 12,
-        customerTags: { VIP: 45, Leads: 450, Active: 680, Inactive: 25 },
+        customerTags: { VIP: 45, Leads: 450, Active: 680, Inactive: 25, Repetitive: 120 },
         broadcastStats: { sent: 45000, readRate: '78.5%', successRate: '98.0%' }
       },
       {
@@ -93,7 +93,7 @@ export const organizationService = {
         ],
         totalCustomers: 18200,
         totalBroadcasts: 96,
-        customerTags: { VIP: 980, Leads: 5400, Active: 11200, Inactive: 620 },
+        customerTags: { VIP: 980, Leads: 5400, Active: 11200, Inactive: 620, Repetitive: 3100 },
         broadcastStats: { sent: 780000, readRate: '84.1%', successRate: '98.7%' }
       },
       {
@@ -113,7 +113,7 @@ export const organizationService = {
         ],
         totalCustomers: 3400,
         totalBroadcasts: 4,
-        customerTags: { VIP: 12, Leads: 1800, Active: 1200, Inactive: 388 },
+        customerTags: { VIP: 12, Leads: 1800, Active: 1200, Inactive: 388, Repetitive: 95 },
         broadcastStats: { sent: 12000, readRate: '45.0%', successRate: '88.2%' }
       }
     ];
