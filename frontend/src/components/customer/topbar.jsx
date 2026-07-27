@@ -1,37 +1,41 @@
+import React from "react";
 import { Bell, Search } from "lucide-react";
 
 export default function Topbar() {
     return (
-        <header className="h-16 bg-white border-b flex items-center px-6">
-            {/* Search */}
-            <div className="relative w-96">
-                <Search className="absolute left-3 top-3 text-gray-400" size={18} />
-                <input
-                    type="text"
-                    placeholder="Search contacts, campaigns..."
-                    className="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
-                />
+        <header className="bg-[#F8FAFC] border-b border-slate-200 flex items-center justify-between px-8 py-4 shrink-0 z-10 sticky top-0 select-none font-sans w-full h-[72px]">
+            {/* Left: Search Bar */}
+            <div className="flex-1 flex items-center">
+                <div className="flex items-center bg-white border border-slate-200 rounded-lg px-3 py-2 w-[380px] text-slate-500 shadow-sm">
+                    <Search size={16} className="mr-2 text-slate-400" />
+                    <input type="text" placeholder="Search contacts, campaigns..." className="bg-transparent border-none outline-none text-sm w-full text-slate-900 placeholder:text-slate-400" />
+                </div>
             </div>
 
-            <div className="ml-auto flex items-center gap-4">
-                {/* Plan */}
-                <span className="px-3 py-1 bg-primary/10 text-primary/90 rounded-full text-sm font-medium">
+            {/* Right Action Panel */}
+            <div className="flex items-center gap-6">
+                
+                {/* Pro Plan Text */}
+                <span className="text-emerald-600 font-medium text-sm">
                     Pro Plan
                 </span>
 
-                {/* Notifications */}
-                <button className="p-2 rounded-lg hover:bg-gray-100">
-                    <Bell size={20} />
+                {/* Notifications Button */}
+                <button
+                    className="text-slate-600 hover:text-slate-900 transition-colors cursor-pointer"
+                    title="Notifications"
+                >
+                    <Bell size={20} strokeWidth={2} />
                 </button>
-
-                {/* User */}
-                <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-semibold">
+                
+                {/* User Profile */}
+                <div className="flex items-center gap-3 cursor-pointer group">
+                    <div className="w-9 h-9 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-sm">
                         H
                     </div>
-                    <div>
-                        <p className="font-medium">Hema</p>
-                        <p className="text-sm text-gray-500">Demo Business</p>
+                    <div className="flex flex-col">
+                        <span className="text-sm font-semibold text-slate-900 leading-tight">Hema</span>
+                        <span className="text-xs text-slate-500 leading-tight">Demo Business</span>
                     </div>
                 </div>
             </div>

@@ -15,61 +15,61 @@ export default function Chart() {
     const maxVal = 1400;
 
     return (
-        <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-            <div className="flex items-center justify-between mb-6">
-                <div>
-                    <h3 className="text-lg font-bold text-gray-900">Message Delivery & Engagement</h3>
-                    <p className="text-sm text-gray-500">Weekly broadcast and automation activity</p>
+        <div className="bg-white p-6 rounded-[20px] border border-purple-100/80 shadow-xs font-body">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                <div className="space-y-0.5">
+                    <h3 className="text-xl font-heading font-black text-slate-900 leading-snug">Message Delivery & Engagement</h3>
+                    <p className="text-sm font-body text-slate-500 leading-relaxed">Weekly broadcast and automation activity</p>
                 </div>
-                <div className="flex items-center gap-4 text-xs font-semibold">
-                    <div className="flex items-center gap-1.5">
-                        <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                        <span className="text-gray-600">Messages Sent</span>
+                <div className="flex items-center gap-4 text-xs font-body font-bold">
+                    <div className="flex items-center gap-2">
+                        <div className="w-3 h-3 rounded-full bg-[#6847BA]"></div>
+                        <span className="text-slate-700">Messages Sent</span>
                     </div>
-                    <div className="flex items-center gap-1.5">
-                        <div className="w-3 h-3 rounded-full bg-emerald-300"></div>
-                        <span className="text-gray-600">Messages Read</span>
+                    <div className="flex items-center gap-2">
+                        <div className="w-3 h-3 rounded-full bg-[#FCD144]"></div>
+                        <span className="text-slate-700">Messages Read</span>
                     </div>
                 </div>
             </div>
 
             {/* Bar Chart Visual */}
-            <div className="h-64 flex items-end justify-between gap-4 pt-6 pb-2 border-b border-gray-100">
+            <div className="h-60 flex items-end justify-between gap-3 pt-6 pb-2 border-b border-purple-100/60">
                 {data.map((item, index) => {
                     const sentHeight = (item.sent / maxVal) * 100;
                     const readHeight = (item.read / maxVal) * 100;
 
                     return (
-                        <div key={index} className="flex-1 flex flex-col items-center gap-2 h-full justify-end group">
+                        <div key={index} className="flex-1 flex flex-col items-center gap-2.5 h-full justify-end group">
                             <div className="w-full flex items-end justify-center gap-1.5 h-full relative">
-                                {/* Sent Bar */}
+                                {/* Sent Bar (Royal Purple #6847BA) */}
                                 <div
                                     style={{ height: `${sentHeight}%` }}
-                                    className="w-full max-w-[20px] bg-gradient-to-t from-green-600 to-green-500 rounded-t-lg group-hover:from-green-700 group-hover:to-green-600 transition-all duration-300 relative"
+                                    className="w-full max-w-[18px] bg-[#6847BA] rounded-t-md group-hover:bg-[#5737a6] transition-all duration-300 relative"
                                 >
                                     {/* Tooltip */}
-                                    <div className="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-[10px] py-1 px-2 rounded font-semibold whitespace-nowrap transition-opacity pointer-events-none z-10">
+                                    <div className="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-900 text-[#FCD144] font-mono text-[11px] py-1 px-2.5 rounded-md font-bold whitespace-nowrap transition-opacity pointer-events-none z-10 shadow-md">
                                         {item.sent} sent
                                     </div>
                                 </div>
 
-                                {/* Read Bar */}
+                                {/* Read Bar (Golden Yellow #FCD144) */}
                                 <div
                                     style={{ height: `${readHeight}%` }}
-                                    className="w-full max-w-[20px] bg-gradient-to-t from-emerald-300 to-emerald-200 rounded-t-lg transition-all duration-300"
+                                    className="w-full max-w-[18px] bg-[#FCD144] rounded-t-md transition-all duration-300"
                                 ></div>
                             </div>
-                            <span className="text-xs font-semibold text-gray-500 mt-2">{item.day}</span>
+                            <span className="text-xs font-mono font-bold text-slate-600 mt-1">{item.day}</span>
                         </div>
                     );
                 })}
             </div>
 
-            <div className="flex items-center justify-between mt-4 text-xs font-medium text-gray-500">
-                <span className="flex items-center gap-1 text-green-600 font-semibold">
-                    <ArrowUpRight size={14} /> 98.4% Average Delivery Rate
+            <div className="flex items-center justify-between mt-5 text-sm font-body text-slate-500">
+                <span className="flex items-center gap-2 text-[#6847BA] font-mono font-black text-sm">
+                    <ArrowUpRight size={16} /> 98.4% Average Delivery Rate
                 </span>
-                <span>Updated 5 mins ago</span>
+                <span className="font-mono text-xs text-slate-400 font-medium">Updated 5 mins ago</span>
             </div>
         </div>
     );

@@ -4,16 +4,18 @@ import Topbar from "../components/customer/topbar";
 
 export default function CustomerLayout() {
     return (
-        <div className="flex h-screen bg-gray-100">
+        <div className="flex h-screen bg-[#F8FAFC] text-slate-900 font-sans antialiased overflow-hidden">
             {/* Sidebar */}
             <Sidebar />
 
-            {/* Main Content */}
-            <div className="flex-1 flex flex-col overflow-hidden">
+            {/* Main Content Area */}
+            <div className="flex-1 flex flex-col min-w-0 h-full overflow-hidden bg-[#F8FAFC]">
                 <Topbar />
 
-                <main className="flex-1 overflow-y-auto p-6">
-                    <Outlet />
+                <main className="flex-1 overflow-y-auto custom-scrollbar">
+                    <div className="p-8 pb-24 max-w-[1600px] mx-auto w-full">
+                        <Outlet />
+                    </div>
                 </main>
             </div>
         </div>
