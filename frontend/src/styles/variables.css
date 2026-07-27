@@ -1,43 +1,13 @@
 :root {
+  --primary: #6847ba;
+  --accent: #fcd144;
 
-  /* ========= COLORS ========= */
+  --background: #f9f8fc;
 
-  --primary: #6847BA;
-  --primary-light: #8667D4;
-  --primary-dark: #4D2F95;
-
-  --accent: #FCD144;
-
-  --success: #22C55E;
-  --warning: #F59E0B;
-  --danger: #EF4444;
-
-  --background: #F8FAFC;
-  --surface: #FFFFFF;
-
-  --text-primary: #1F2937;
-  --text-secondary: #6B7280;
-
-  --border: #E5E7EB;
-
-  /* ========= FONTS ========= */
+  --text-primary: #1e1b2e;
+  --text-secondary: #6b7280;
 
   --font-heading: "Sora", sans-serif;
   --font-body: "Instrument Sans", sans-serif;
   --font-code: "Commit Mono", monospace;
-
-  /* ========= RADIUS ========= */
-
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
-
-  /* ========= SHADOWS ========= */
-
-  --shadow-sm: 0 2px 8px rgba(0,0,0,.05);
-
-  --shadow-md: 0 8px 20px rgba(0,0,0,.08);
-
-  --shadow-lg: 0 20px 40px rgba(0,0,0,.12);
-
 }
