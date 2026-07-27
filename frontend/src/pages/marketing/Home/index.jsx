@@ -1,32 +1,24 @@
 import React from "react";
 import Hero from "./Hero";
 import TrustedCompanies from "./TrustedCompanies";
-import Features from "./Features";
 import Benefits from "./Benefits";
-import HowItWorks from "./HowItWorks";
-import DashboardPreview from "./DashboardPreview";
+import Features from "./Features";
 import Integrations from "./Integrations";
 import Pricing from "./Pricing";
 import Testimonials from "./Testimonials";
 import FAQ from "./FAQ";
-import CTA from "./CTA";
-import Footer from "./Footer";
 
 export default function Home() {
     return (
-        <div className="flex flex-col min-h-screen bg-white font-sans text-gray-900">
+        <div className="flex flex-col bg-white overflow-x-hidden">
             <Hero />
             <TrustedCompanies />
-            <Features />
             <Benefits />
-            <HowItWorks />
-            <DashboardPreview />
+            <Features />
             <Integrations />
             <Pricing />
             <Testimonials />
             <FAQ />
-            <CTA />
-            <Footer />
         </div>
     );
 }

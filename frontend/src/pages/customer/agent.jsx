@@ -44,7 +44,7 @@ export default function AgentModule() {
         setTimeout(() => {
             let aiText = "Thank you for asking! Conveza.AI automates your WhatsApp campaigns, captures leads 24/7, and integrates directly with your CRM.";
             if (currentInput.toLowerCase().includes("pricing")) {
-                aiText = "Our pricing starts at $49/month for Growth, and $149/month for Pro. Would you like me to send you the full pricing breakdown PDF?";
+                aiText = "Our pricing starts at ₹2,999/month for Growth, and ₹7,499/month for Pro. Would you like me to send you the full pricing breakdown PDF?";
             } else if (currentInput.toLowerCase().includes("demo")) {
                 aiText = "I can set up a live 1-on-1 demo for you right now! What time works best for you tomorrow?";
             }

@@ -5,12 +5,11 @@
 @import "tailwindcss";
 
 @theme {
-    --color-primary: #6847ba;
-    --color-accent: #fcd144;
-
-    --font-sans: "Instrument Sans", sans-serif;
-    --font-heading: "Sora", sans-serif;
-    --font-mono: "Commit Mono", monospace;
+  --color-primary: #6847BA;
+  --color-accent: #FCD144;
+  --font-sans: "Instrument Sans", sans-serif;
+  --font-heading: "Sora", sans-serif;
+  --font-mono: "Commit Mono", monospace;
 }
 
 @layer base {
@@ -103,20 +102,81 @@
     }
 }
 
-@layer utilities {
-    @keyframes marquee {
-        from {
-            transform: translateX(0%);
-        }
+/* Custom Utilities */
+.container-custom {
+    max-width: 1380px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+}
 
-        to {
-            transform: translateX(-50%);
-        }
+@media (min-width: 768px) {
+    .container-custom {
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
+}
 
-    .animate-marquee {
-        animation: marquee 20s linear infinite;
+@media (min-width: 1280px) {
+    .container-custom {
+        padding-left: 4rem;
+        padding-right: 4rem;
     }
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px rgba(104, 71, 186, 0.08), inset 0 0 0 1px rgba(255,255,255,0.8);
+}
+
+.bg-grid-pattern {
+    background-image: linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(circle at center, black, transparent 80%);
+}
+
+@keyframes fade-in-up {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes float-delayed {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+    animation: float-delayed 8s ease-in-out infinite 1s;
+}
+
+.animate-marquee {
+    animation: marquee 20s linear infinite;
 }
 
 ::-webkit-scrollbar {
