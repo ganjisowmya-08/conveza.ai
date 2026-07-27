@@ -46,32 +46,32 @@ export default function ContactTable() {
     ];
 
     return (
-        <div className="bg-white p-7 md:p-8 rounded-3xl border border-purple-100/80 shadow-2xs font-body">
-            <div className="flex items-center justify-between mb-6">
-                <div className="space-y-1">
-                    <h3 className="text-lg font-heading font-extrabold text-slate-900 leading-snug">Recent Customer Leads</h3>
-                    <p className="text-xs md:text-sm font-body text-slate-500 leading-relaxed">Latest active WhatsApp conversations</p>
+        <div className="bg-white p-6 rounded-[20px] border border-purple-100/80 shadow-xs font-body mt-6">
+            <div className="flex items-center justify-between mb-5">
+                <div className="space-y-0.5">
+                    <h3 className="text-xl font-heading font-black text-slate-900 leading-snug">Recent Customer Leads</h3>
+                    <p className="text-sm font-body text-slate-500 leading-relaxed">Latest active WhatsApp conversations</p>
                 </div>
-                <button className="text-xs md:text-sm font-heading font-extrabold text-[#6847BA] hover:text-[#5737a6] flex items-center gap-1.5 transition-colors cursor-pointer">
+                <button className="text-xs font-heading font-black text-[#6847BA] hover:text-[#5737a6] flex items-center gap-1.5 transition-colors cursor-pointer">
                     Manage Contacts <ExternalLink size={14} />
                 </button>
             </div>
 
             <div className="overflow-x-auto">
-                <table className="w-full text-left text-xs min-w-[640px]">
+                <table className="w-full text-left text-sm min-w-[640px]">
                     <thead>
-                        <tr className="border-b border-purple-100/60 text-[10px] font-heading font-extrabold text-slate-400 uppercase tracking-widest">
-                            <th className="pb-4 pl-3">Customer</th>
-                            <th className="pb-4 px-4">Status Tag</th>
-                            <th className="pb-4 px-4">Last Message</th>
-                            <th className="pb-4 text-right pr-3">Action</th>
+                        <tr className="border-b border-purple-100/60 text-xs font-heading font-black text-slate-400 uppercase tracking-wider">
+                            <th className="pb-3.5 pl-2">Customer</th>
+                            <th className="pb-3.5 px-3">Status Tag</th>
+                            <th className="pb-3.5 px-3">Last Message</th>
+                            <th className="pb-3.5 text-right pr-2">Action</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-purple-100/40">
                         {contacts.map((contact) => (
                             <tr key={contact.id} className="hover:bg-purple-50/30 transition-colors">
-                                <td className="py-4 pl-3">
-                                    <div className="flex items-center gap-3.5">
+                                <td className="py-4 pl-2">
+                                    <div className="flex items-center gap-3">
                                         <div className={`w-9 h-9 rounded-full ${contact.avatarBg} flex items-center justify-center font-heading font-bold text-xs shrink-0 shadow-2xs`}>
                                             {contact.name.charAt(0)}
                                         </div>
@@ -81,17 +81,17 @@ export default function ContactTable() {
                                         </div>
                                     </div>
                                 </td>
-                                <td className="py-4 px-4 whitespace-nowrap">
+                                <td className="py-4 px-3 whitespace-nowrap">
                                     <span className={`inline-block px-3 py-1 rounded-full text-xs font-mono font-bold border ${contact.tagColor}`}>
                                         {contact.tag}
                                     </span>
                                 </td>
-                                <td className="py-4 px-4">
-                                    <p className="text-slate-800 text-xs font-body font-semibold truncate max-w-[220px] leading-relaxed mb-0.5">{contact.lastMsg}</p>
-                                    <span className="text-[11px] font-mono text-slate-400 leading-none">{contact.time}</span>
+                                <td className="py-4 px-3">
+                                    <p className="text-slate-800 text-sm font-body font-semibold truncate max-w-[220px] leading-relaxed mb-0.5">{contact.lastMsg}</p>
+                                    <span className="text-xs font-mono text-slate-400 leading-none">{contact.time}</span>
                                 </td>
-                                <td className="py-4 text-right pr-3 whitespace-nowrap">
-                                    <button className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#6847BA] hover:bg-[#5737a6] text-white text-xs font-heading font-bold shadow-xs transition-colors cursor-pointer">
+                                <td className="py-4 text-right pr-2 whitespace-nowrap">
+                                    <button className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#6847BA] hover:bg-[#5737a6] text-white text-xs font-heading font-bold shadow-2xs transition-colors cursor-pointer">
                                         <MessageSquare size={14} /> Chat
                                     </button>
                                 </td>
