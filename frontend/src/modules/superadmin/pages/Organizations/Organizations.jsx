@@ -338,9 +338,9 @@ const Organizations = () => {
                     value={newOrg.plan}
                     onChange={(e) => setNewOrg({ ...newOrg, plan: e.target.value })}
                   >
-                    <option value="Starter">Starter ($49/mo)</option>
-                    <option value="Growth Pro">Growth Pro ($149/mo)</option>
-                    <option value="Enterprise">Enterprise ($499/mo)</option>
+                    <option value="Starter">Starter (₹49/mo)</option>
+                    <option value="Growth Pro">Growth Pro (₹149/mo)</option>
+                    <option value="Enterprise">Enterprise (₹499/mo)</option>
                   </select>
                 </div>
                 <div>
