@@ -3,7 +3,7 @@ import React from "react";
 const HowItWorks = () => {
     return (
         <section className="py-24 bg-gray-50 border-y border-gray-100">
-            <div className="max-w-7xl mx-auto px-8">
+            <div className="container-custom">
                 <div className="text-center mb-20">
                     <h2 className="text-primary font-bold tracking-wide uppercase text-sm mb-3">How It Works</h2>
                     <h1 className="text-5xl font-extrabold text-gray-900 tracking-tight">Three Steps to Automation</h1>

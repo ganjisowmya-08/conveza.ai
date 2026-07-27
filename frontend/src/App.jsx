@@ -27,11 +27,17 @@ import settingsService from "./modules/superadmin/services/settingsService";
 import dashboardService from "./modules/superadmin/services/dashboardService";
 import "./modules/superadmin/styles/globals.css";
 
+import Home from "./pages/marketing/Home";
+import Footer from "./pages/marketing/Home/Footer";
+
 function MarketingLayout() {
     return (
-        <div>
+        <div className="flex flex-col min-h-screen">
             <Navbar />
-            <Outlet />
+            <div className="flex-grow">
+                <Outlet />
+            </div>
+            <Footer />
         </div>
     );
 }
@@ -136,7 +142,7 @@ function App() {
         <Routes>
             {/* Marketing pages with Navbar */}
             <Route element={<MarketingLayout />}>
-                <Route path="/" element={<Hero />} />
+                <Route path="/" element={<Home />} />
                 <Route path="/features" element={<Features />} />
                 <Route path="/solutions" element={<Solutions />} />
                 <Route path="/pricing" element={<Pricing />} />

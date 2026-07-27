@@ -9,8 +9,8 @@ const Solutions = () => {
     ];
 
     return (
-        <section className="min-h-screen bg-white py-20 px-8">
-            <div className="max-w-7xl mx-auto">
+        <section className="min-h-screen bg-white py-20">
+            <div className="container-custom">
                 <div className="text-center mb-16">
                     <h1 className="text-5xl font-bold text-gray-900 mb-6">Tailored Solutions for Your Industry</h1>
                     <p className="text-xl text-gray-600 max-w-2xl mx-auto">Discover how Conveza.AI transforms customer engagement across various sectors.</p>

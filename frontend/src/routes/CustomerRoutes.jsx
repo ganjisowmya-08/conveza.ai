@@ -8,7 +8,6 @@ import Customers from "../pages/marketing/Home/Customers";
 import Resources from "../pages/marketing/Home/Resources";
 import MarketingLayout from "../layouts/MarketingLayout";
 import Login from "../pages/auth/Login";
-import Signup from "../pages/auth/Signup";
 import SignIn from "../pages/auth/SignIn";
 import SignUp from "../pages/auth/SignUp";
 import CustomerLayout from "../layouts/customerLayout";
@@ -43,7 +42,7 @@ export default function CustomerRoutes() {
             {/* Auth Routes */}
             <Route path="/login" element={<Login />} />
             <Route path="/signin" element={<SignIn />} />
-            <Route path="/signup" element={<Signup />} />
+            <Route path="/signup" element={<SignUp />} />
             <Route path="/register" element={<SignUp />} />
 
             {/* Customer Workspace */}

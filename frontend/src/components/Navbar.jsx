@@ -3,35 +3,43 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return (
-        <header className="sticky top-0 z-50 w-full border-b border-gray-200/50 bg-white/70 backdrop-blur-md transition-all">
-            <nav className="max-w-7xl mx-auto flex items-center justify-between px-8 py-4">
-                <Link to="/" className="flex items-center gap-3 group">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary to-accent text-white flex items-center justify-center font-bold text-xl shadow-lg shadow-accent/30 group-hover:shadow-accent/50 transition-all">
+        <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-xl border-b border-gray-100 transition-all font-sans h-[88px] flex items-center">
+            <nav className="container-custom flex items-center justify-between py-4">
+                <Link to="/" className="flex items-center gap-2 group">
+                    <div className="w-8 h-8 rounded bg-primary text-white flex items-center justify-center font-bold text-lg shadow-sm">
                         C
                     </div>
-                    <h1 className="text-2xl font-extrabold text-gray-900 tracking-tight">
-                        Conveza<span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">.AI</span>
-                    </h1>
+                    <span className="font-extrabold font-heading text-gray-900 text-xl tracking-tight group-hover:opacity-80 transition-opacity">
+                        Conveza<span className="text-primary">.ai</span>
+                    </span>
                 </Link>
 
-                <div className="hidden lg:flex gap-8 text-sm font-semibold text-gray-600">
-                    <Link to="/features" className="hover:text-primary transition-colors">Features</Link>
-                    <Link to="/solutions" className="hover:text-primary transition-colors">Solutions</Link>
-                    <Link to="/pricing" className="hover:text-primary transition-colors">Pricing</Link>
-                    <Link to="/customers" className="hover:text-primary transition-colors">Customers</Link>
-                    <Link to="/resources" className="hover:text-primary transition-colors">Resources</Link>
+                <div className="hidden xl:flex items-center gap-7 font-semibold text-[15px] text-gray-600">
+                    <div className="flex items-center gap-1 cursor-pointer hover:text-gray-900 transition-colors">
+                        Features <span className="text-[10px]">▼</span>
+                    </div>
+                    <div className="flex items-center gap-1 cursor-pointer hover:text-gray-900 transition-colors">
+                        Solutions <span className="text-[10px]">▼</span>
+                    </div>
+                    <Link to="/pricing" className="hover:text-gray-900 transition-colors">Pricing</Link>
+                    <div className="flex items-center gap-1 cursor-pointer hover:text-gray-900 transition-colors">
+                        Resources <span className="text-[10px]">▼</span>
+                    </div>
+                    <Link to="/customers" className="hover:text-gray-900 transition-colors">Customers</Link>
                 </div>
 
-                <div className="flex gap-4 items-center">
-                    <Link to="/signin" className="text-sm font-semibold text-gray-600 hover:text-primary transition-colors">
-                        Sign In
+                <div className="flex items-center gap-3 sm:gap-5">
+                    <Link to="/login" className="hidden sm:inline font-bold text-[15px] text-gray-700 hover:text-primary transition-colors">
+                        Login
                     </Link>
-                    <Link to="/signup" className="text-sm font-semibold text-gray-600 hover:text-primary transition-colors">
-                        Sign Up
-                    </Link>
-                    <button className="px-5 py-2.5 text-sm font-bold rounded-full bg-primary text-white hover:bg-primary/90 shadow-lg hover:shadow-accent/30 transition-all transform hover:-translate-y-0.5">
-                        Book Demo
-                    </button>
+                    <div className="flex items-center gap-2.5 sm:gap-3 flex-shrink-0">
+                        <Link to="/demo" className="hidden md:inline-flex items-center justify-center flex-shrink-0 px-4 sm:px-5 py-2.5 rounded-xl border border-gray-200 text-gray-700 font-bold hover:bg-gray-50 hover:-translate-y-0.5 transition-all duration-200 text-sm whitespace-nowrap">
+                            Book Demo
+                        </Link>
+                        <Link to="/signup" className="inline-flex items-center justify-center flex-shrink-0 px-4 sm:px-5 py-2.5 rounded-xl bg-accent text-gray-900 font-extrabold hover:bg-accent/90 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-accent/20 transition-all duration-200 text-sm whitespace-nowrap shadow-sm">
+                            Start Free Trial
+                        </Link>
+                    </div>
                 </div>
             </nav>
         </header>

@@ -3,7 +3,7 @@ import React from "react";
 const DashboardPreview = () => {
     return (
         <section className="py-24 bg-white">
-            <div className="max-w-7xl mx-auto px-8">
+            <div className="container-custom">
                 <div className="text-center mb-16">
                     <h2 className="text-primary font-bold tracking-wide uppercase text-sm mb-3">The Platform</h2>
                     <h1 className="text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Everything in One Place</h1>
