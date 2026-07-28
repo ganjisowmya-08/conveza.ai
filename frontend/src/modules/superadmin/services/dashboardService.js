@@ -10,7 +10,7 @@ export const dashboardService = {
     }
     // Return mock data for premium UI display
     return [
-      { id: 'revenue', title: "Total Monthly Revenue", value: "$84,250", trend: "12.5%", trendType: "up", colorClass: "primary" },
+      { id: 'revenue', title: "Total Monthly Revenue", value: "₹5,42,500", trend: "12.5%", trendType: "up", colorClass: "primary" },
       { id: 'tenants', title: "Active Tenants", value: "32", trend: "8.3%", trendType: "up", colorClass: "cyan" },
       { id: 'gateways', title: "Active WA Gateways", value: "74", trend: "15.2%", trendType: "up", colorClass: "violet" },
       { id: 'latency', title: "Avg Server Latency", value: "124ms", trend: "-4.1%", trendType: "down", colorClass: "rose" }
