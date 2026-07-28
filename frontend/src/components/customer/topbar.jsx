@@ -1,5 +1,5 @@
 import React from "react";
-import { Bell } from "lucide-react";
+import { Bell, Search } from "lucide-react";
 
 export default function Topbar() {
     return (
@@ -19,9 +19,15 @@ export default function Topbar() {
             {/* Right Section */}
             <div className="flex items-center gap-6">
 
-                {/* Plan Badge */}
-                <div className="font-body rounded-full bg-brand-accent text-slate-900 text-sm font-semibold flex items-center justify-center" style={{ padding: '4px 12px', whiteSpace: 'nowrap' }}>
-                    Pro Plan
+                {/* Search Bar */}
+                <div className="relative group">
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-brand-primary w-4 h-4 transition-colors" />
+                    <input 
+                        type="text" 
+                        placeholder="Search..." 
+                        className="pr-4 py-2 bg-white border border-slate-200 rounded-lg text-sm font-body text-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary w-64 transition-all placeholder:text-slate-400"
+                        style={{ paddingLeft: '40px' }}
+                    />
                 </div>
 
                 {/* Notification */}
@@ -34,22 +40,6 @@ export default function Topbar() {
                     <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-red-500"></span>
                 </button>
 
-                {/* User */}
-                <div className="flex items-center gap-3 cursor-pointer">
-                    <div className="w-10 h-10 rounded-full bg-brand-primary text-white flex items-center justify-center font-semibold font-body">
-                        H
-                    </div>
-
-                    <div>
-                        <h4 className="font-body text-sm font-semibold text-slate-900">
-                            Hema
-                        </h4>
-
-                        <p className="font-body text-xs text-slate-500">
-                            Demo Business
-                        </p>
-                    </div>
-                </div>
 
             </div>
 

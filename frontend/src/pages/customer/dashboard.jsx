@@ -61,12 +61,12 @@ const cards = [
         colorClass: "violet",
     },
     {
-        title: "Conversion Rate",
-        value: "24.8%",
-        trend: "4.3%",
-        trendType: "up",
-        trendLabel: "vs last week",
-        icon: TrendingUp,
+        title: "Failed Messages",
+        value: "120",
+        trend: "2.1%",
+        trendType: "down",
+        trendLabel: "vs last month",
+        icon: AlertTriangle,
         colorClass: "rose",
     },
 ];
@@ -253,65 +253,27 @@ export default function Dashboard() {
             </div>
 
             {/* Analytics Section */}
-            <div className="widgets-grid">
-
-                {/* Campaign Performance */}
-                <div className="glass-card revenue-overview-widget">
-                    <div className="widget-header">
-                        <div className="widget-title-area">
-                            <h3>Campaign Performance</h3>
-                            <p className="widget-subtitle">Delivery and engagement overview</p>
-                        </div>
-                        <button className="btn-secondary" style={{ fontSize: '0.8rem', padding: '0.4rem 0.8rem' }}>
-                            View Reports
-                        </button>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-6 mt-6">
-                        {/* Delivery Rate */}
-                        <div className="bg-slate-50/50 rounded-xl p-5 border border-slate-100">
-                            <div className="flex justify-between">
-                                <p className="font-body text-sm text-gray-500 font-medium">Delivery Rate</p>
-                                <CheckCircle size={20} className="text-emerald-500" />
-                            </div>
-                            <h2 className="font-mono text-3xl font-bold mt-4 text-slate-800">96%</h2>
-                            <div className="h-2 bg-gray-200 rounded-full mt-5 overflow-hidden">
-                                <div className="h-2 bg-emerald-500 rounded-full" style={{ width: "96%" }}></div>
-                            </div>
-                        </div>
-
-                        {/* Failed Messages */}
-                        <div className="bg-slate-50/50 rounded-xl p-5 border border-slate-100">
-                            <div className="flex justify-between">
-                                <p className="font-body text-sm text-gray-500 font-medium">Failed Messages</p>
-                                <Clock size={20} className="text-amber-500" />
-                            </div>
-                            <h2 className="font-mono text-3xl font-bold mt-4 text-slate-800">120</h2>
-                            <p className="text-xs text-gray-500 mt-4 font-medium">Need attention</p>
-                        </div>
-                    </div>
-                </div>
-
+            <div className="w-full mb-8">
                 {/* Engagement */}
-                <div className="glass-card platform-alerts-widget">
+                <div className="glass-card">
                     <div className="widget-header">
                         <div className="widget-title-area">
                             <h3>Engagement</h3>
                         </div>
                     </div>
 
-                    <div className="space-y-6 mt-4">
-                        <div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                        <div className="bg-slate-50/50 rounded-xl border border-slate-100" style={{ padding: '24px' }}>
                             <p className="font-body text-sm text-gray-500 font-medium">Response Rate</p>
-                            <h4 className="font-mono text-2xl font-bold mt-1 text-slate-800">72.4%</h4>
+                            <div className="font-mono text-3xl font-bold mt-2 text-slate-800" style={{ lineHeight: '1.5' }}>72.4%</div>
                         </div>
-                        <div>
+                        <div className="bg-slate-50/50 rounded-xl border border-slate-100" style={{ padding: '24px' }}>
                             <p className="font-body text-sm text-gray-500 font-medium">Conversations</p>
-                            <h4 className="font-mono text-2xl font-bold mt-1 text-slate-800">12,540</h4>
+                            <div className="font-mono text-3xl font-bold mt-2 text-slate-800" style={{ lineHeight: '1.5' }}>12,540</div>
                         </div>
-                        <div>
+                        <div className="bg-slate-50/50 rounded-xl border border-slate-100" style={{ padding: '24px' }}>
                             <p className="font-body text-sm text-gray-500 font-medium">Avg Response Time</p>
-                            <h4 className="font-mono text-2xl font-bold mt-1 text-slate-800">2m 14s</h4>
+                            <div className="font-mono text-3xl font-bold mt-2 text-slate-800" style={{ lineHeight: '1.5' }}>2m 14s</div>
                         </div>
                     </div>
                 </div>
@@ -335,12 +297,12 @@ export default function Dashboard() {
                             <AreaChart data={campaignAnalytics}>
                                 <defs>
                                     <linearGradient id="colorSent" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="5%" stopColor="#6847ba" stopOpacity={0.4}/>
-                                        <stop offset="95%" stopColor="#6847ba" stopOpacity={0.0}/>
+                                        <stop offset="5%" stopColor="#6847ba" stopOpacity={0.4} />
+                                        <stop offset="95%" stopColor="#6847ba" stopOpacity={0.0} />
                                     </linearGradient>
                                     <linearGradient id="colorDelivered" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="5%" stopColor="#0ea5e9" stopOpacity={0.4}/>
-                                        <stop offset="95%" stopColor="#0ea5e9" stopOpacity={0.0}/>
+                                        <stop offset="5%" stopColor="#0ea5e9" stopOpacity={0.4} />
+                                        <stop offset="95%" stopColor="#0ea5e9" stopOpacity={0.0} />
                                     </linearGradient>
                                 </defs>
                                 <CartesianGrid strokeDasharray="3 3" vertical={false} opacity={0.3} />
@@ -471,7 +433,7 @@ export default function Dashboard() {
 
             </div>
 
-            {/* Live Activity Feed */}
+            {/* Recent Activity Feed */}
 
             <div className="glass-card" style={{ marginTop: '40px' }}>
 
@@ -480,11 +442,11 @@ export default function Dashboard() {
                     <div>
 
                         <h3 className="font-heading text-xl font-bold text-brand-primary">
-                            Live Activity Feed
+                            Recent Activity Feed
                         </h3>
 
                         <p className="text-gray-500 mt-1">
-                            Real-time updates from your workspace
+                            Latest updates from your workspace
                         </p>
 
                     </div>
@@ -558,10 +520,6 @@ export default function Dashboard() {
                                     </div>
 
                                 </div>
-
-                                <span className="text-xs bg-green-100 text-green-700 rounded-full" style={{ padding: '4px 12px' }}>
-                                    Live
-                                </span>
 
                             </div>
 
