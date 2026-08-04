@@ -18,7 +18,7 @@ const menuItems = [
     { name: "Inbox", path: "/customer/inbox", icon: MessageCircle },
     { name: "Broadcast", path: "/customer/broadcast", icon: Megaphone },
     { name: "Templates", path: "/customer/templates", icon: FileText },
-    { name: "Automation", path: "/customer/automation", icon: Bot },
+    { name: "AI Agent", path: "/customer/automation", icon: Bot },
     { name: "Analytics", path: "/customer/analytics", icon: BarChart3 },
     { name: "Settings", path: "/customer/settings", icon: Settings },
     { name: "Profile", path: "/customer/profile", icon: User },
