@@ -16,6 +16,8 @@ import {
     Trash2,
     Mail,
     Phone,
+    Send,
+    Target,
 } from "lucide-react";
 
 export default function Contacts() {
@@ -177,6 +179,36 @@ export default function Contacts() {
 
     return (
         <div className="flex flex-col gap-6 max-w-7xl mx-auto pb-12 font-body select-none">
+            <div className="flex flex-col sm:flex-row gap-6 w-full">
+                <div className="w-full max-w-[240px]">
+                    <div className="bg-white rounded-[18px] border border-purple-100/80 shadow-xs flex items-center gap-4" style={{ padding: '24px' }}>
+                        <div className="w-11 h-11 rounded-xl bg-green-50 text-green-600 flex items-center justify-center font-bold shrink-0 border border-green-100">
+                            <Target size={20} />
+                        </div>
+                        <div className="space-y-0.5">
+                            <p className="text-xs font-heading font-extrabold text-slate-400 uppercase tracking-wider leading-none">Campaigns</p>
+                            <h3 className="text-lg font-heading font-black text-slate-900 tracking-tight" style={{ lineHeight: '1.4', paddingBottom: '4px' }}>
+                                Launch WhatsApp Status
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="w-full max-w-[240px]">
+                    <div className="bg-white rounded-[18px] border border-purple-100/80 shadow-xs flex items-center gap-4" style={{ padding: '24px' }}>
+                        <div className="w-11 h-11 rounded-xl bg-green-50 text-green-600 flex items-center justify-center font-bold shrink-0 border border-green-100">
+                            <Send size={20} />
+                        </div>
+                        <div className="space-y-0.5">
+                            <p className="text-xs font-heading font-extrabold text-slate-400 uppercase tracking-wider leading-none">Activity</p>
+                            <h3 className="text-lg font-heading font-black text-slate-900 tracking-tight" style={{ lineHeight: '1.4', paddingBottom: '4px' }}>
+                                Launch Broadcast Campaign
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             {/* Page Header (10. Page Title: text-2xl, Buttons: text-sm) */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div className="space-y-1">
@@ -188,14 +220,21 @@ export default function Contacts() {
                 <div className="flex items-center gap-3">
                     <button
                         onClick={() => setIsAddModalOpen(true)}
-                        className="px-4 py-2.5 bg-[#6847BA] hover:bg-[#5737a6] text-white font-body font-bold rounded-xl shadow-md shadow-[#6847BA]/20 transition-all flex items-center gap-2 text-sm cursor-pointer"
+                        className="bg-white border border-slate-200 hover:bg-slate-50 text-black font-body font-bold rounded-xl shadow-md transition-all flex items-center gap-2 text-sm cursor-pointer"
+                        style={{ padding: '10px 16px' }}
                     >
                         <UserPlus size={16} /> Add Contact
                     </button>
-                    <button className="px-4 py-2.5 bg-white border border-slate-200 text-slate-700 font-body font-semibold rounded-xl hover:bg-slate-50 shadow-2xs transition-all flex items-center gap-2 text-sm cursor-pointer">
+                    <button 
+                        className="bg-white border border-slate-200 text-slate-700 font-body font-semibold rounded-xl hover:bg-slate-50 shadow-2xs transition-all flex items-center gap-2 text-sm cursor-pointer"
+                        style={{ padding: '10px 16px' }}
+                    >
                         <Upload size={16} /> Import CSV
                     </button>
-                    <button className="p-2.5 bg-white border border-slate-200 text-slate-600 rounded-xl hover:bg-slate-50 shadow-2xs transition-all cursor-pointer">
+                    <button 
+                        className="bg-white border border-slate-200 text-slate-600 rounded-xl hover:bg-slate-50 shadow-2xs transition-all cursor-pointer"
+                        style={{ padding: '10px' }}
+                    >
                         <Download size={16} />
                     </button>
                 </div>
@@ -203,47 +242,47 @@ export default function Contacts() {
 
             {/* Metric Overview Cards (Section Titles: text-lg, Values: text-2xl) */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div className="bg-white p-5 rounded-[18px] border border-purple-100/80 shadow-xs flex items-center gap-4">
+                <div className="bg-white rounded-[18px] border border-purple-100/80 shadow-xs flex items-center gap-4" style={{ padding: '24px' }}>
                     <div className="w-11 h-11 rounded-xl bg-[#6847BA]/10 text-[#6847BA] flex items-center justify-center font-bold shrink-0">
                         <Users size={20} />
                     </div>
                     <div className="space-y-0.5">
                         <p className="text-xs font-heading font-extrabold text-slate-400 uppercase tracking-wider leading-none">Total Audience</p>
-                        <h3 className="text-2xl font-mono font-black text-slate-900 tracking-tight">{contactsList.length} Contacts</h3>
+                        <h3 className="text-2xl font-mono font-black text-slate-900 tracking-tight" style={{ lineHeight: '1.4', paddingBottom: '4px' }}>{contactsList.length} Contacts</h3>
                     </div>
                 </div>
 
-                <div className="bg-white p-5 rounded-[18px] border border-purple-100/80 shadow-xs flex items-center gap-4">
+                <div className="bg-white rounded-[18px] border border-purple-100/80 shadow-xs flex items-center gap-4" style={{ padding: '24px' }}>
                     <div className="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center font-bold shrink-0 border border-amber-200/60">
                         <UserCheck size={20} />
                     </div>
                     <div className="space-y-0.5">
                         <p className="text-xs font-heading font-extrabold text-slate-400 uppercase tracking-wider leading-none">Active Leads</p>
-                        <h3 className="text-2xl font-mono font-black text-slate-900 tracking-tight">
+                        <h3 className="text-2xl font-mono font-black text-slate-900 tracking-tight" style={{ lineHeight: '1.4', paddingBottom: '4px' }}>
                             {contactsList.filter((c) => c.tag.includes("Lead")).length} Leads
                         </h3>
                     </div>
                 </div>
 
-                <div className="bg-white p-5 rounded-[18px] border border-purple-100/80 shadow-xs flex items-center gap-4">
+                <div className="bg-white rounded-[18px] border border-purple-100/80 shadow-xs flex items-center gap-4" style={{ padding: '24px' }}>
                     <div className="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold shrink-0 border border-blue-100">
                         <Tag size={20} />
                     </div>
                     <div className="space-y-0.5">
                         <p className="text-xs font-heading font-extrabold text-slate-400 uppercase tracking-wider leading-none">Subscribed VIPs</p>
-                        <h3 className="text-2xl font-mono font-black text-slate-900 tracking-tight">
+                        <h3 className="text-2xl font-mono font-black text-slate-900 tracking-tight" style={{ lineHeight: '1.4', paddingBottom: '4px' }}>
                             {contactsList.filter((c) => c.tag.includes("VIP") || c.tag === "Subscribed").length} Users
                         </h3>
                     </div>
                 </div>
 
-                <div className="bg-white p-5 rounded-[18px] border border-purple-100/80 shadow-xs flex items-center gap-4">
+                <div className="bg-white rounded-[18px] border border-purple-100/80 shadow-xs flex items-center gap-4" style={{ padding: '24px' }}>
                     <div className="w-11 h-11 rounded-xl bg-gray-100 text-slate-600 flex items-center justify-center font-bold shrink-0">
                         <UserX size={20} />
                     </div>
                     <div className="space-y-0.5">
                         <p className="text-xs font-heading font-extrabold text-slate-400 uppercase tracking-wider leading-none">Opted-Out</p>
-                        <h3 className="text-2xl font-mono font-black text-slate-900 tracking-tight">
+                        <h3 className="text-2xl font-mono font-black text-slate-900 tracking-tight" style={{ lineHeight: '1.4', paddingBottom: '4px' }}>
                             {contactsList.filter((c) => c.status === "Opted-Out").length} Contacts
                         </h3>
                     </div>
@@ -278,7 +317,8 @@ export default function Contacts() {
                             placeholder="Search by name, phone, email..."
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
-                            className="w-full pl-10 pr-4 py-2 border border-slate-200 rounded-xl text-sm font-body focus:outline-none focus:border-[#6847BA] focus:ring-4 focus:ring-[#6847BA]/15 transition"
+                            className="w-full border-2 border-black rounded-xl text-sm font-body focus:outline-none focus:border-[#6847BA] focus:ring-4 focus:ring-[#6847BA]/15 transition"
+                            style={{ padding: '8px 16px 8px 40px', borderWidth: '2px' }}
                         />
                     </div>
                 </div>
@@ -308,7 +348,7 @@ export default function Contacts() {
                     <table className="w-full text-left text-sm">
                         <thead>
                             <tr className="bg-purple-50/30 border-b border-purple-100/60 text-xs font-heading font-black text-slate-400 uppercase tracking-wider">
-                                <th className="py-3.5 pl-6 w-10">
+                                <th className="py-3.5 pl-6 w-10" style={{ paddingLeft: '24px', paddingTop: '16px', paddingBottom: '16px' }}>
                                     <input
                                         type="checkbox"
                                         onChange={handleSelectAll}
@@ -319,12 +359,12 @@ export default function Contacts() {
                                         className="rounded border-slate-300 text-[#6847BA] focus:ring-[#6847BA]"
                                     />
                                 </th>
-                                <th className="py-3.5">Contact</th>
-                                <th className="py-3.5">WhatsApp Phone</th>
-                                <th className="py-3.5">Segment Tag</th>
-                                <th className="py-3.5">Source</th>
-                                <th className="py-3.5">Last Activity</th>
-                                <th className="py-3.5 text-right pr-6">Actions</th>
+                                <th className="py-3.5" style={{ paddingTop: '16px', paddingBottom: '16px' }}>Contact</th>
+                                <th className="py-3.5" style={{ paddingTop: '16px', paddingBottom: '16px' }}>WhatsApp Phone</th>
+                                <th className="py-3.5" style={{ paddingTop: '16px', paddingBottom: '16px' }}>Segment Tag</th>
+                                <th className="py-3.5" style={{ paddingTop: '16px', paddingBottom: '16px' }}>Source</th>
+                                <th className="py-3.5" style={{ paddingTop: '16px', paddingBottom: '16px' }}>Last Activity</th>
+                                <th className="py-3.5 text-right pr-6" style={{ paddingRight: '24px', paddingTop: '16px', paddingBottom: '16px' }}>Actions</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-purple-100/40">
@@ -337,7 +377,7 @@ export default function Contacts() {
                             ) : (
                                 filteredContacts.map((contact) => (
                                     <tr key={contact.id} className="hover:bg-purple-50/20 transition-colors group">
-                                        <td className="py-4 pl-6">
+                                        <td className="py-4 pl-6" style={{ paddingLeft: '24px', paddingTop: '16px', paddingBottom: '16px' }}>
                                             <input
                                                 type="checkbox"
                                                 checked={selectedContacts.includes(contact.id)}
@@ -345,7 +385,7 @@ export default function Contacts() {
                                                 className="rounded border-slate-300 text-[#6847BA] focus:ring-[#6847BA]"
                                             />
                                         </td>
-                                        <td className="py-4">
+                                        <td className="py-4" style={{ paddingTop: '16px', paddingBottom: '16px' }}>
                                             <div className="flex items-center gap-3">
                                                 <div
                                                     className={`w-9 h-9 rounded-full ${contact.avatarBg} flex items-center justify-center font-heading font-bold text-xs shrink-0 shadow-2xs`}
@@ -360,22 +400,22 @@ export default function Contacts() {
                                                 </div>
                                             </div>
                                         </td>
-                                        <td className="py-4 font-mono font-medium text-slate-800">
+                                        <td className="py-4 font-mono font-medium text-slate-800" style={{ paddingTop: '16px', paddingBottom: '16px' }}>
                                             <div className="flex items-center gap-1.5 text-xs font-mono font-bold text-slate-700">
                                                 <Phone size={13} className="text-[#6847BA]" />
                                                 {contact.phone}
                                             </div>
                                         </td>
-                                        <td className="py-4">
+                                        <td className="py-4" style={{ paddingTop: '16px', paddingBottom: '16px' }}>
                                             <span
                                                 className={`inline-block px-3 py-1 rounded-full text-xs font-mono font-bold border ${contact.tagColor}`}
                                             >
                                                 {contact.tag}
                                             </span>
                                         </td>
-                                        <td className="py-4 text-xs font-body font-medium text-slate-500">{contact.source}</td>
-                                        <td className="py-4 text-xs font-mono text-slate-400">{contact.lastActive}</td>
-                                        <td className="py-4 text-right pr-6">
+                                        <td className="py-4 text-xs font-body font-medium text-slate-500" style={{ paddingTop: '16px', paddingBottom: '16px' }}>{contact.source}</td>
+                                        <td className="py-4 text-xs font-mono text-slate-400" style={{ paddingTop: '16px', paddingBottom: '16px' }}>{contact.lastActive}</td>
+                                        <td className="py-4 text-right pr-6" style={{ paddingRight: '24px', paddingTop: '16px', paddingBottom: '16px' }}>
                                             <div className="flex items-center justify-end gap-2">
                                                 <button className="px-3 py-1.5 rounded-xl bg-[#6847BA] text-white hover:bg-[#5737a6] font-heading font-bold text-xs transition-colors flex items-center gap-1 shadow-2xs cursor-pointer">
                                                     <MessageSquare size={13} /> Chat
@@ -393,7 +433,7 @@ export default function Contacts() {
                 </div>
 
                 {/* Table Footer */}
-                <div className="p-4 bg-purple-50/20 border-t border-purple-100/60 flex items-center justify-between text-xs font-body text-slate-500">
+                <div className="bg-purple-50/20 border-t border-purple-100/60 flex items-center justify-between text-xs font-body text-slate-500" style={{ padding: '24px' }}>
                     <span>Showing {filteredContacts.length} of {contactsList.length} contacts</span>
                     <div className="flex items-center gap-2 font-body font-bold">
                         <button className="px-3 py-1.5 bg-white border border-slate-200 rounded-lg disabled:opacity-50 text-slate-700 hover:bg-slate-50 cursor-pointer">
@@ -409,8 +449,8 @@ export default function Contacts() {
             {/* Add Contact Modal */}
             {isAddModalOpen && (
                 <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-xs z-50 flex items-center justify-center p-4">
-                    <div className="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl space-y-5 border border-purple-100 font-body">
-                        <div className="flex items-center justify-between border-b pb-4 border-purple-100/70">
+                    <div className="bg-white rounded-2xl max-w-md w-full shadow-2xl space-y-5 border border-purple-100 font-body" style={{ padding: '24px' }}>
+                        <div className="flex items-center justify-between border-b border-purple-100/70" style={{ paddingBottom: '20px', marginBottom: '20px' }}>
                             <h3 className="text-lg font-heading font-black text-slate-900">Add New Contact</h3>
                             <button
                                 onClick={() => setIsAddModalOpen(false)}
@@ -421,47 +461,51 @@ export default function Contacts() {
                         </div>
 
                         <form onSubmit={handleAddContactSubmit} className="space-y-4">
-                            <div>
-                                <label className="block text-xs font-heading font-bold text-slate-700 mb-1">Full Name *</label>
+                            <div style={{ marginBottom: '24px' }}>
+                                <label className="block text-xs font-heading font-bold text-slate-700" style={{ marginBottom: '16px' }}>Full Name *</label>
                                 <input
                                     type="text"
                                     required
                                     placeholder="e.g. Alex Morgan"
                                     value={newContact.name}
                                     onChange={(e) => setNewContact({ ...newContact, name: e.target.value })}
-                                    className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#6847BA] focus:ring-4 focus:ring-[#6847BA]/15"
+                                    className="w-full border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#6847BA] focus:ring-4 focus:ring-[#6847BA]/15"
+                                    style={{ padding: '10px 14px' }}
                                 />
                             </div>
 
-                            <div>
-                                <label className="block text-xs font-heading font-bold text-slate-700 mb-1">WhatsApp Phone Number *</label>
+                            <div style={{ marginBottom: '24px' }}>
+                                <label className="block text-xs font-heading font-bold text-slate-700" style={{ marginBottom: '16px' }}>WhatsApp Phone Number *</label>
                                 <input
                                     type="text"
                                     required
                                     placeholder="e.g. +1 (555) 123-4567"
                                     value={newContact.phone}
                                     onChange={(e) => setNewContact({ ...newContact, phone: e.target.value })}
-                                    className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#6847BA] focus:ring-4 focus:ring-[#6847BA]/15 font-mono"
+                                    className="w-full border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#6847BA] focus:ring-4 focus:ring-[#6847BA]/15 font-mono"
+                                    style={{ padding: '10px 14px' }}
                                 />
                             </div>
 
-                            <div>
-                                <label className="block text-xs font-heading font-bold text-slate-700 mb-1">Email Address</label>
+                            <div style={{ marginBottom: '24px' }}>
+                                <label className="block text-xs font-heading font-bold text-slate-700" style={{ marginBottom: '16px' }}>Email Address</label>
                                 <input
                                     type="email"
                                     placeholder="alex@company.com"
                                     value={newContact.email}
                                     onChange={(e) => setNewContact({ ...newContact, email: e.target.value })}
-                                    className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#6847BA] focus:ring-4 focus:ring-[#6847BA]/15 font-mono"
+                                    className="w-full border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#6847BA] focus:ring-4 focus:ring-[#6847BA]/15 font-mono"
+                                    style={{ padding: '10px 14px' }}
                                 />
                             </div>
 
-                            <div>
-                                <label className="block text-xs font-heading font-bold text-slate-700 mb-1">Segment Tag</label>
+                            <div style={{ marginBottom: '24px' }}>
+                                <label className="block text-xs font-heading font-bold text-slate-700" style={{ marginBottom: '16px' }}>Segment Tag</label>
                                 <select
                                     value={newContact.tag}
                                     onChange={(e) => setNewContact({ ...newContact, tag: e.target.value })}
-                                    className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#6847BA] focus:ring-4 focus:ring-[#6847BA]/15 bg-white"
+                                    className="w-full border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#6847BA] focus:ring-4 focus:ring-[#6847BA]/15 bg-white"
+                                    style={{ padding: '10px 14px' }}
                                 >
                                     <option value="Hot Lead">Hot Lead</option>
                                     <option value="VIP Customer">VIP Customer</option>
@@ -470,17 +514,19 @@ export default function Contacts() {
                                 </select>
                             </div>
 
-                            <div className="pt-4 flex items-center justify-end gap-3 border-t border-purple-100/70">
+                            <div className="flex items-center justify-end gap-3 border-t border-purple-100/70" style={{ paddingTop: '16px', marginTop: '16px' }}>
                                 <button
                                     type="button"
                                     onClick={() => setIsAddModalOpen(false)}
-                                    className="px-4 py-2 text-xs font-heading font-bold text-slate-600 hover:bg-slate-100 rounded-xl transition-colors cursor-pointer"
+                                    className="text-xs font-heading font-bold text-slate-600 hover:bg-slate-100 rounded-xl transition-colors cursor-pointer"
+                                    style={{ padding: '8px 16px' }}
                                 >
                                     Cancel
                                 </button>
                                 <button
                                     type="submit"
-                                    className="px-5 py-2 text-xs font-heading font-bold bg-[#6847BA] hover:bg-[#5737a6] text-white rounded-xl shadow-md transition-colors cursor-pointer"
+                                    className="text-xs font-heading font-bold text-white rounded-xl shadow-md transition-colors cursor-pointer"
+                                    style={{ padding: '8px 20px', backgroundColor: '#6847BA' }}
                                 >
                                     Save Contact
                                 </button>

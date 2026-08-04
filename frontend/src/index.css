@@ -4,104 +4,203 @@
 
 @import "tailwindcss";
 
+/* =========================================================
+   THEME
+========================================================= */
+
 @theme {
-  --color-primary: #6847BA;
-  --color-accent: #FCD144;
-  --font-sans: "Instrument Sans", sans-serif;
-  --font-heading: "Sora", sans-serif;
-  --font-mono: "Commit Mono", monospace;
+    /* Typography */
+    --font-sans: "Instrument Sans", sans-serif;
+    --font-heading: "Sora", sans-serif;
+    --font-mono: "Commit Mono", monospace;
+
+    /* Brand Colors */
+    --color-primary: #6847ba;
+    --color-accent: #fcd144;
+
+    /* UI Colors */
+    --color-background: #f8fafc;
+    --color-surface: #ffffff;
+    --color-text: #1e1b2e;
+    --color-text-secondary: #64748b;
+    --color-border: #e2e8f0;
+
+    /* Radius */
+    --radius-card: 20px;
 }
 
-@layer base {
+/* =========================================================
+   BASE
+========================================================= */
 
-    *,
-    *::before,
-    *::after {
-        box-sizing: border-box;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--color-background);
+    color: var(--color-text);
+
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.7;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    font-family: var(--font-heading);
+    color: var(--color-text);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+code,
+pre {
+    font-family: var(--font-mono);
+}
+
+/* =========================================================
+   CUSTOM CLASSES
+========================================================= */
+
+.font-heading {
+    font-family: var(--font-heading);
+}
+
+.font-body {
+    font-family: var(--font-sans);
+}
+
+.font-mono {
+    font-family: var(--font-mono);
+}
+
+/* Brand Colors */
+
+.bg-brand-primary {
+    background-color: var(--color-primary);
+}
+
+.text-brand-primary {
+    color: var(--color-primary);
+}
+
+.border-brand-primary {
+    border-color: var(--color-primary);
+}
+
+.bg-brand-accent {
+    background-color: var(--color-accent);
+}
+
+.text-brand-accent {
+    color: var(--color-accent);
+}
+
+.border-brand-accent {
+    border-color: var(--color-accent);
+}
+
+/* Card */
+
+.card, .glass-card, .rounded-xl.border {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease !important;
+}
+
+.card:hover, .glass-card:hover, .rounded-xl.border:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+    border-color: rgba(104, 71, 186, 0.3) !important;
+    cursor: pointer;
+}
+
+/* Buttons */
+
+.btn-primary {
+    background: var(--color-primary);
+    color: white;
+    border-radius: 12px;
+    transition: all 0.25s ease;
+}
+
+.btn-primary:hover {
+    opacity: 0.95;
+}
+
+.btn-accent {
+    background: var(--color-accent);
+    color: #1e1b2e;
+    border-radius: 12px;
+    transition: all 0.25s ease;
+}
+
+.btn-accent:hover {
+    opacity: 0.95;
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes marquee {
+    from {
+        transform: translateX(0%);
     }
 
-    html {
-        scroll-behavior: smooth;
-    }
-
-    body {
-        margin: 0;
-        font-family: var(--font-sans);
-        font-size: 16px;
-        line-height: 1.75;
-        color: #1e1b2e;
-        background: #f9f8fc;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
-
-    img {
-        display: block;
-        max-width: 100%;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-family: var(--font-heading);
-        line-height: 1.25;
-        letter-spacing: -0.02em;
-    }
-
-    button,
-    input,
-    textarea,
-    select {
-        font: inherit;
-    }
-
-    code,
-    pre {
-        font-family: var(--font-mono);
+    to {
+        transform: translateX(-50%);
     }
 }
 
-@layer components {
-    .font-heading {
-        font-family: var(--font-heading);
-    }
-
-    .font-body {
-        font-family: var(--font-sans);
-    }
-
-    .font-mono {
-        font-family: var(--font-mono);
-    }
-
-    .bg-brand-primary {
-        background-color: var(--color-primary);
-    }
-
-    .text-brand-primary {
-        color: var(--color-primary);
-    }
-
-    .border-brand-primary {
-        border-color: var(--color-primary);
-    }
-
-    .bg-brand-accent {
-        background-color: var(--color-accent);
-    }
-
-    .text-brand-accent {
-        color: var(--color-accent);
-    }
-
-    .border-brand-accent {
-        border-color: var(--color-accent);
-    }
+.animate-marquee {
+    animation: marquee 20s linear infinite;
 }
 
+<<<<<<< HEAD
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+=======
 /* Custom Utilities */
 .container-custom {
     max-width: 1380px;
@@ -125,6 +224,7 @@
         padding-right: 4rem;
     }
 }
+>>>>>>> origin/main
 
 .glass-card {
     background: rgba(255, 255, 255, 0.7);
